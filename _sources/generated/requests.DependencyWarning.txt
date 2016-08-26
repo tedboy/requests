@@ -1,0 +1,6 @@
+requests.DependencyWarning
+==========================
+
+.. currentmodule:: requests
+
+.. autoexception:: DependencyWarning

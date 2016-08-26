@@ -1,0 +1,332 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>requests.NullHandler &mdash; Sphinx Skeleton</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Sphinx Skeleton" href="../../index.html"/>
+        <link rel="up" title="requests" href="../requests.html"/>
+        <link rel="next" title="requests.NullHandler.__init__" href="requests.NullHandler.__init__.html"/>
+        <link rel="prev" title="requests.session" href="../requests.session.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Sphinx Skeleton
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../requests.html">requests</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../requests.html#requests-http-library">Requests HTTP library</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../requests.html#functions">Functions</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../requests.html#classes">Classes</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="">requests.NullHandler</a></li>
+<li class="toctree-l4"><a class="reference internal" href="requests.PreparedRequest.html">requests.PreparedRequest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="requests.Request.html">requests.Request</a></li>
+<li class="toctree-l4"><a class="reference internal" href="requests.Response.html">requests.Response</a></li>
+<li class="toctree-l4"><a class="reference internal" href="requests.Session.html">requests.Session</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../requests.html#exceptions">Exceptions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../user_guide.html">The User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../official_doc.html">Other Stuffs from official doc</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Sphinx Skeleton</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../api.html">&lt;no title&gt;</a> &raquo;</li>
+        
+          <li><a href="../requests.html">requests</a> &raquo;</li>
+        
+      <li>requests.NullHandler</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/generated/generated/requests.NullHandler.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="requests-nullhandler">
+<h1>requests.NullHandler<a class="headerlink" href="#requests-nullhandler" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="requests.NullHandler">
+<em class="property">class </em><code class="descclassname">requests.</code><code class="descname">NullHandler</code><span class="sig-paren">(</span><em>level=0</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/logging.html#NullHandler"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#requests.NullHandler" title="Permalink to this definition">¶</a></dt>
+<dd><p>This handler does nothing. It&#8217;s intended to be used to avoid the
+&#8220;No handlers could be found for logger XXX&#8221; one-off warning. This is
+important for library code, which may contain code to log events. If a user
+of the library does not configure logging, the one-off warning might be
+produced; to avoid this, the library developer simply needs to instantiate
+a NullHandler and add it to the top-level logger of the library module or
+package.</p>
+</dd></dl>
+
+<div class="section" id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="requests.NullHandler.__init__.html#requests.NullHandler.__init__" title="requests.NullHandler.__init__"><code class="xref py py-obj docutils literal"><span class="pre">__init__</span></code></a>([level])</td>
+<td>Initializes the instance - basically setting the formatter to None and the filter list to empty.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="requests.NullHandler.acquire.html#requests.NullHandler.acquire" title="requests.NullHandler.acquire"><code class="xref py py-obj docutils literal"><span class="pre">acquire</span></code></a>()</td>
+<td>Acquire the I/O thread lock.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="requests.NullHandler.addFilter.html#requests.NullHandler.addFilter" title="requests.NullHandler.addFilter"><code class="xref py py-obj docutils literal"><span class="pre">addFilter</span></code></a>(filter)</td>
+<td>Add the specified filter to this handler.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="requests.NullHandler.close.html#requests.NullHandler.close" title="requests.NullHandler.close"><code class="xref py py-obj docutils literal"><span class="pre">close</span></code></a>()</td>
+<td>Tidy up any resources used by the handler.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="requests.NullHandler.createLock.html#requests.NullHandler.createLock" title="requests.NullHandler.createLock"><code class="xref py py-obj docutils literal"><span class="pre">createLock</span></code></a>()</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="requests.NullHandler.emit.html#requests.NullHandler.emit" title="requests.NullHandler.emit"><code class="xref py py-obj docutils literal"><span class="pre">emit</span></code></a>(record)</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="requests.NullHandler.filter.html#requests.NullHandler.filter" title="requests.NullHandler.filter"><code class="xref py py-obj docutils literal"><span class="pre">filter</span></code></a>(record)</td>
+<td>Determine if a record is loggable by consulting all the filters.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="requests.NullHandler.flush.html#requests.NullHandler.flush" title="requests.NullHandler.flush"><code class="xref py py-obj docutils literal"><span class="pre">flush</span></code></a>()</td>
+<td>Ensure all logging output has been flushed.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="requests.NullHandler.format.html#requests.NullHandler.format" title="requests.NullHandler.format"><code class="xref py py-obj docutils literal"><span class="pre">format</span></code></a>(record)</td>
+<td>Format the specified record.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="requests.NullHandler.get_name.html#requests.NullHandler.get_name" title="requests.NullHandler.get_name"><code class="xref py py-obj docutils literal"><span class="pre">get_name</span></code></a>()</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="requests.NullHandler.handle.html#requests.NullHandler.handle" title="requests.NullHandler.handle"><code class="xref py py-obj docutils literal"><span class="pre">handle</span></code></a>(record)</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="requests.NullHandler.handleError.html#requests.NullHandler.handleError" title="requests.NullHandler.handleError"><code class="xref py py-obj docutils literal"><span class="pre">handleError</span></code></a>(record)</td>
+<td>Handle errors which occur during an emit() call.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="requests.NullHandler.release.html#requests.NullHandler.release" title="requests.NullHandler.release"><code class="xref py py-obj docutils literal"><span class="pre">release</span></code></a>()</td>
+<td>Release the I/O thread lock.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="requests.NullHandler.removeFilter.html#requests.NullHandler.removeFilter" title="requests.NullHandler.removeFilter"><code class="xref py py-obj docutils literal"><span class="pre">removeFilter</span></code></a>(filter)</td>
+<td>Remove the specified filter from this handler.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="requests.NullHandler.setFormatter.html#requests.NullHandler.setFormatter" title="requests.NullHandler.setFormatter"><code class="xref py py-obj docutils literal"><span class="pre">setFormatter</span></code></a>(fmt)</td>
+<td>Set the formatter for this handler.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="requests.NullHandler.setLevel.html#requests.NullHandler.setLevel" title="requests.NullHandler.setLevel"><code class="xref py py-obj docutils literal"><span class="pre">setLevel</span></code></a>(level)</td>
+<td>Set the logging level of this handler.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="requests.NullHandler.set_name.html#requests.NullHandler.set_name" title="requests.NullHandler.set_name"><code class="xref py py-obj docutils literal"><span class="pre">set_name</span></code></a>(name)</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="attributes">
+<h2>Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="requests.NullHandler.name.html#requests.NullHandler.name" title="requests.NullHandler.name"><code class="xref py py-obj docutils literal"><span class="pre">name</span></code></a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="requests.NullHandler.__init__.html" class="btn btn-neutral float-right" title="requests.NullHandler.__init__" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../requests.session.html" class="btn btn-neutral" title="requests.session" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/copybutton.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

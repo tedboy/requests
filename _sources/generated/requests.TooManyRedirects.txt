@@ -1,0 +1,6 @@
+requests.TooManyRedirects
+=========================
+
+.. currentmodule:: requests
+
+.. autoexception:: TooManyRedirects

@@ -1,0 +1,6 @@
+requests.FileModeWarning
+========================
+
+.. currentmodule:: requests
+
+.. autoexception:: FileModeWarning

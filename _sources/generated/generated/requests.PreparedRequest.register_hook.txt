@@ -1,0 +1,6 @@
+requests.PreparedRequest.register_hook
+======================================
+
+.. currentmodule:: requests
+
+.. automethod:: PreparedRequest.register_hook

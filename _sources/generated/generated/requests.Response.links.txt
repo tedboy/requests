@@ -1,0 +1,6 @@
+requests.Response.links
+=======================
+
+.. currentmodule:: requests
+
+.. autoattribute:: Response.links

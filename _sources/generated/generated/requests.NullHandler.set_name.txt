@@ -1,0 +1,6 @@
+requests.NullHandler.set_name
+=============================
+
+.. currentmodule:: requests
+
+.. automethod:: NullHandler.set_name

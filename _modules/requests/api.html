@@ -1,0 +1,361 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>requests.api &mdash; Sphinx Skeleton</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Sphinx Skeleton" href="../../index.html"/>
+        <link rel="up" title="Module code" href="../index.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Sphinx Skeleton
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../generated/requests.html">requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user_guide.html">The User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../official_doc.html">Other Stuffs from official doc</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Sphinx Skeleton</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+        
+      <li>requests.api</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for requests.api</h1><div class="highlight"><pre>
+<span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">requests.api</span>
+<span class="sd">~~~~~~~~~~~~</span>
+
+<span class="sd">This module implements the Requests API.</span>
+
+<span class="sd">:copyright: (c) 2012 by Kenneth Reitz.</span>
+<span class="sd">:license: Apache2, see LICENSE for more details.</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">sessions</span>
+
+
+<div class="viewcode-block" id="request"><a class="viewcode-back" href="../../generated/requests.request.html#requests.request">[docs]</a><span class="k">def</span> <span class="nf">request</span><span class="p">(</span><span class="n">method</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Constructs and sends a :class:`Request &lt;Request&gt;`.</span>
+
+<span class="sd">    :param method: method for the new :class:`Request` object.</span>
+<span class="sd">    :param url: URL for the new :class:`Request` object.</span>
+<span class="sd">    :param params: (optional) Dictionary or bytes to be sent in the query string for the :class:`Request`.</span>
+<span class="sd">    :param data: (optional) Dictionary, bytes, or file-like object to send in the body of the :class:`Request`.</span>
+<span class="sd">    :param json: (optional) json data to send in the body of the :class:`Request`.</span>
+<span class="sd">    :param headers: (optional) Dictionary of HTTP Headers to send with the :class:`Request`.</span>
+<span class="sd">    :param cookies: (optional) Dict or CookieJar object to send with the :class:`Request`.</span>
+<span class="sd">    :param files: (optional) Dictionary of ``&#39;name&#39;: file-like-objects`` (or ``{&#39;name&#39;: file-tuple}``) for multipart encoding upload.</span>
+<span class="sd">        ``file-tuple`` can be a 2-tuple ``(&#39;filename&#39;, fileobj)``, 3-tuple ``(&#39;filename&#39;, fileobj, &#39;content_type&#39;)``</span>
+<span class="sd">        or a 4-tuple ``(&#39;filename&#39;, fileobj, &#39;content_type&#39;, custom_headers)``, where ``&#39;content-type&#39;`` is a string</span>
+<span class="sd">        defining the content type of the given file and ``custom_headers`` a dict-like object containing additional headers</span>
+<span class="sd">        to add for the file.</span>
+<span class="sd">    :param auth: (optional) Auth tuple to enable Basic/Digest/Custom HTTP Auth.</span>
+<span class="sd">    :param timeout: (optional) How long to wait for the server to send data</span>
+<span class="sd">        before giving up, as a float, or a :ref:`(connect timeout, read</span>
+<span class="sd">        timeout) &lt;timeouts&gt;` tuple.</span>
+<span class="sd">    :type timeout: float or tuple</span>
+<span class="sd">    :param allow_redirects: (optional) Boolean. Set to True if POST/PUT/DELETE redirect following is allowed.</span>
+<span class="sd">    :type allow_redirects: bool</span>
+<span class="sd">    :param proxies: (optional) Dictionary mapping protocol to the URL of the proxy.</span>
+<span class="sd">    :param verify: (optional) whether the SSL cert will be verified. A CA_BUNDLE path can also be provided. Defaults to ``True``.</span>
+<span class="sd">    :param stream: (optional) if ``False``, the response content will be immediately downloaded.</span>
+<span class="sd">    :param cert: (optional) if String, path to ssl client cert file (.pem). If Tuple, (&#39;cert&#39;, &#39;key&#39;) pair.</span>
+<span class="sd">    :return: :class:`Response &lt;Response&gt;` object</span>
+<span class="sd">    :rtype: requests.Response</span>
+
+<span class="sd">    Usage::</span>
+
+<span class="sd">      &gt;&gt;&gt; import requests</span>
+<span class="sd">      &gt;&gt;&gt; req = requests.request(&#39;GET&#39;, &#39;http://httpbin.org/get&#39;)</span>
+<span class="sd">      &lt;Response [200]&gt;</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># By using the &#39;with&#39; statement we are sure the session is closed, thus we</span>
+    <span class="c1"># avoid leaving sockets open which can trigger a ResourceWarning in some</span>
+    <span class="c1"># cases, and look like a memory leak in others.</span>
+    <span class="k">with</span> <span class="n">sessions</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span> <span class="k">as</span> <span class="n">session</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">session</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="n">method</span><span class="p">,</span> <span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="get"><a class="viewcode-back" href="../../generated/requests.get.html#requests.get">[docs]</a><span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Sends a GET request.</span>
+
+<span class="sd">    :param url: URL for the new :class:`Request` object.</span>
+<span class="sd">    :param params: (optional) Dictionary or bytes to be sent in the query string for the :class:`Request`.</span>
+<span class="sd">    :param \*\*kwargs: Optional arguments that ``request`` takes.</span>
+<span class="sd">    :return: :class:`Response &lt;Response&gt;` object</span>
+<span class="sd">    :rtype: requests.Response</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">kwargs</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s1">&#39;allow_redirects&#39;</span><span class="p">,</span> <span class="bp">True</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">request</span><span class="p">(</span><span class="s1">&#39;get&#39;</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="options"><a class="viewcode-back" href="../../generated/requests.options.html#requests.options">[docs]</a><span class="k">def</span> <span class="nf">options</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Sends a OPTIONS request.</span>
+
+<span class="sd">    :param url: URL for the new :class:`Request` object.</span>
+<span class="sd">    :param \*\*kwargs: Optional arguments that ``request`` takes.</span>
+<span class="sd">    :return: :class:`Response &lt;Response&gt;` object</span>
+<span class="sd">    :rtype: requests.Response</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">kwargs</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s1">&#39;allow_redirects&#39;</span><span class="p">,</span> <span class="bp">True</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">request</span><span class="p">(</span><span class="s1">&#39;options&#39;</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="head"><a class="viewcode-back" href="../../generated/requests.head.html#requests.head">[docs]</a><span class="k">def</span> <span class="nf">head</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Sends a HEAD request.</span>
+
+<span class="sd">    :param url: URL for the new :class:`Request` object.</span>
+<span class="sd">    :param \*\*kwargs: Optional arguments that ``request`` takes.</span>
+<span class="sd">    :return: :class:`Response &lt;Response&gt;` object</span>
+<span class="sd">    :rtype: requests.Response</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">kwargs</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s1">&#39;allow_redirects&#39;</span><span class="p">,</span> <span class="bp">False</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">request</span><span class="p">(</span><span class="s1">&#39;head&#39;</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="post"><a class="viewcode-back" href="../../generated/requests.post.html#requests.post">[docs]</a><span class="k">def</span> <span class="nf">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Sends a POST request.</span>
+
+<span class="sd">    :param url: URL for the new :class:`Request` object.</span>
+<span class="sd">    :param data: (optional) Dictionary, bytes, or file-like object to send in the body of the :class:`Request`.</span>
+<span class="sd">    :param json: (optional) json data to send in the body of the :class:`Request`.</span>
+<span class="sd">    :param \*\*kwargs: Optional arguments that ``request`` takes.</span>
+<span class="sd">    :return: :class:`Response &lt;Response&gt;` object</span>
+<span class="sd">    :rtype: requests.Response</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">return</span> <span class="n">request</span><span class="p">(</span><span class="s1">&#39;post&#39;</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">json</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="put"><a class="viewcode-back" href="../../generated/requests.put.html#requests.put">[docs]</a><span class="k">def</span> <span class="nf">put</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Sends a PUT request.</span>
+
+<span class="sd">    :param url: URL for the new :class:`Request` object.</span>
+<span class="sd">    :param data: (optional) Dictionary, bytes, or file-like object to send in the body of the :class:`Request`.</span>
+<span class="sd">    :param \*\*kwargs: Optional arguments that ``request`` takes.</span>
+<span class="sd">    :return: :class:`Response &lt;Response&gt;` object</span>
+<span class="sd">    :rtype: requests.Response</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">return</span> <span class="n">request</span><span class="p">(</span><span class="s1">&#39;put&#39;</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="patch"><a class="viewcode-back" href="../../generated/requests.patch.html#requests.patch">[docs]</a><span class="k">def</span> <span class="nf">patch</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Sends a PATCH request.</span>
+
+<span class="sd">    :param url: URL for the new :class:`Request` object.</span>
+<span class="sd">    :param data: (optional) Dictionary, bytes, or file-like object to send in the body of the :class:`Request`.</span>
+<span class="sd">    :param \*\*kwargs: Optional arguments that ``request`` takes.</span>
+<span class="sd">    :return: :class:`Response &lt;Response&gt;` object</span>
+<span class="sd">    :rtype: requests.Response</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">return</span> <span class="n">request</span><span class="p">(</span><span class="s1">&#39;patch&#39;</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span>  <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="delete"><a class="viewcode-back" href="../../generated/requests.delete.html#requests.delete">[docs]</a><span class="k">def</span> <span class="nf">delete</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Sends a DELETE request.</span>
+
+<span class="sd">    :param url: URL for the new :class:`Request` object.</span>
+<span class="sd">    :param \*\*kwargs: Optional arguments that ``request`` takes.</span>
+<span class="sd">    :return: :class:`Response &lt;Response&gt;` object</span>
+<span class="sd">    :rtype: requests.Response</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">return</span> <span class="n">request</span><span class="p">(</span><span class="s1">&#39;delete&#39;</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/copybutton.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

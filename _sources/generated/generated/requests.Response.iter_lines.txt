@@ -1,0 +1,6 @@
+requests.Response.iter_lines
+============================
+
+.. currentmodule:: requests
+
+.. automethod:: Response.iter_lines

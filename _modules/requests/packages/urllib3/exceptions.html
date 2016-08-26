@@ -1,0 +1,421 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>requests.packages.urllib3.exceptions &mdash; Sphinx Skeleton</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../../../_static/favicon.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Sphinx Skeleton" href="../../../../index.html"/>
+        <link rel="up" title="Module code" href="../../../index.html"/> 
+
+  
+  <script src="../../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home"> Sphinx Skeleton
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../generated/requests.html">requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../user_guide.html">The User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../official_doc.html">Other Stuffs from official doc</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">Sphinx Skeleton</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../../index.html">Module code</a> &raquo;</li>
+        
+      <li>requests.packages.urllib3.exceptions</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for requests.packages.urllib3.exceptions</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">absolute_import</span>
+<span class="c1"># Base Exceptions</span>
+
+
+<span class="k">class</span> <span class="nc">HTTPError</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
+    <span class="s2">&quot;Base exception used by this module.&quot;</span>
+    <span class="k">pass</span>
+
+
+<span class="k">class</span> <span class="nc">HTTPWarning</span><span class="p">(</span><span class="ne">Warning</span><span class="p">):</span>
+    <span class="s2">&quot;Base warning used by this module.&quot;</span>
+    <span class="k">pass</span>
+
+
+<span class="k">class</span> <span class="nc">PoolError</span><span class="p">(</span><span class="n">HTTPError</span><span class="p">):</span>
+    <span class="s2">&quot;Base exception for errors caused within a pool.&quot;</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pool</span><span class="p">,</span> <span class="n">message</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pool</span> <span class="o">=</span> <span class="n">pool</span>
+        <span class="n">HTTPError</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2">: </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">pool</span><span class="p">,</span> <span class="n">message</span><span class="p">))</span>
+
+    <span class="k">def</span> <span class="nf">__reduce__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># For pickling purposes.</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">,</span> <span class="p">(</span><span class="bp">None</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+
+
+<span class="k">class</span> <span class="nc">RequestError</span><span class="p">(</span><span class="n">PoolError</span><span class="p">):</span>
+    <span class="s2">&quot;Base exception for PoolErrors that have associated URLs.&quot;</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pool</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">message</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">url</span> <span class="o">=</span> <span class="n">url</span>
+        <span class="n">PoolError</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pool</span><span class="p">,</span> <span class="n">message</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__reduce__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># For pickling purposes.</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">,</span> <span class="p">(</span><span class="bp">None</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">url</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+
+
+<span class="k">class</span> <span class="nc">SSLError</span><span class="p">(</span><span class="n">HTTPError</span><span class="p">):</span>
+    <span class="s2">&quot;Raised when SSL certificate fails in an HTTPS connection.&quot;</span>
+    <span class="k">pass</span>
+
+
+<span class="k">class</span> <span class="nc">ProxyError</span><span class="p">(</span><span class="n">HTTPError</span><span class="p">):</span>
+    <span class="s2">&quot;Raised when the connection to a proxy fails.&quot;</span>
+    <span class="k">pass</span>
+
+
+<span class="k">class</span> <span class="nc">DecodeError</span><span class="p">(</span><span class="n">HTTPError</span><span class="p">):</span>
+    <span class="s2">&quot;Raised when automatic decoding based on Content-Type fails.&quot;</span>
+    <span class="k">pass</span>
+
+
+<span class="k">class</span> <span class="nc">ProtocolError</span><span class="p">(</span><span class="n">HTTPError</span><span class="p">):</span>
+    <span class="s2">&quot;Raised when something unexpected happens mid-request/response.&quot;</span>
+    <span class="k">pass</span>
+
+
+<span class="c1">#: Renamed to ProtocolError but aliased for backwards compatibility.</span>
+<span class="n">ConnectionError</span> <span class="o">=</span> <span class="n">ProtocolError</span>
+
+
+<span class="c1"># Leaf Exceptions</span>
+
+<span class="k">class</span> <span class="nc">MaxRetryError</span><span class="p">(</span><span class="n">RequestError</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Raised when the maximum number of retries is exceeded.</span>
+
+<span class="sd">    :param pool: The connection pool</span>
+<span class="sd">    :type pool: :class:`~urllib3.connectionpool.HTTPConnectionPool`</span>
+<span class="sd">    :param string url: The requested Url</span>
+<span class="sd">    :param exceptions.Exception reason: The underlying error</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pool</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">reason</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">reason</span> <span class="o">=</span> <span class="n">reason</span>
+
+        <span class="n">message</span> <span class="o">=</span> <span class="s2">&quot;Max retries exceeded with url: </span><span class="si">%s</span><span class="s2"> (Caused by </span><span class="si">%r</span><span class="s2">)&quot;</span> <span class="o">%</span> <span class="p">(</span>
+            <span class="n">url</span><span class="p">,</span> <span class="n">reason</span><span class="p">)</span>
+
+        <span class="n">RequestError</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pool</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">message</span><span class="p">)</span>
+
+
+<span class="k">class</span> <span class="nc">HostChangedError</span><span class="p">(</span><span class="n">RequestError</span><span class="p">):</span>
+    <span class="s2">&quot;Raised when an existing pool gets a request for a foreign host.&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pool</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">retries</span><span class="o">=</span><span class="mi">3</span><span class="p">):</span>
+        <span class="n">message</span> <span class="o">=</span> <span class="s2">&quot;Tried to open a foreign host with url: </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">url</span>
+        <span class="n">RequestError</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pool</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">message</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">retries</span> <span class="o">=</span> <span class="n">retries</span>
+
+
+<span class="k">class</span> <span class="nc">TimeoutStateError</span><span class="p">(</span><span class="n">HTTPError</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Raised when passing an invalid state to a timeout &quot;&quot;&quot;</span>
+    <span class="k">pass</span>
+
+
+<span class="k">class</span> <span class="nc">TimeoutError</span><span class="p">(</span><span class="n">HTTPError</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Raised when a socket timeout error occurs.</span>
+
+<span class="sd">    Catching this error will catch both :exc:`ReadTimeoutErrors</span>
+<span class="sd">    &lt;ReadTimeoutError&gt;` and :exc:`ConnectTimeoutErrors &lt;ConnectTimeoutError&gt;`.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">pass</span>
+
+
+<span class="k">class</span> <span class="nc">ReadTimeoutError</span><span class="p">(</span><span class="n">TimeoutError</span><span class="p">,</span> <span class="n">RequestError</span><span class="p">):</span>
+    <span class="s2">&quot;Raised when a socket timeout occurs while receiving data from a server&quot;</span>
+    <span class="k">pass</span>
+
+
+<span class="c1"># This timeout error does not have a URL attached and needs to inherit from the</span>
+<span class="c1"># base HTTPError</span>
+<span class="k">class</span> <span class="nc">ConnectTimeoutError</span><span class="p">(</span><span class="n">TimeoutError</span><span class="p">):</span>
+    <span class="s2">&quot;Raised when a socket timeout occurs while connecting to a server&quot;</span>
+    <span class="k">pass</span>
+
+
+<span class="k">class</span> <span class="nc">NewConnectionError</span><span class="p">(</span><span class="n">ConnectTimeoutError</span><span class="p">,</span> <span class="n">PoolError</span><span class="p">):</span>
+    <span class="s2">&quot;Raised when we fail to establish a new connection. Usually ECONNREFUSED.&quot;</span>
+    <span class="k">pass</span>
+
+
+<span class="k">class</span> <span class="nc">EmptyPoolError</span><span class="p">(</span><span class="n">PoolError</span><span class="p">):</span>
+    <span class="s2">&quot;Raised when a pool runs out of connections and no more are allowed.&quot;</span>
+    <span class="k">pass</span>
+
+
+<span class="k">class</span> <span class="nc">ClosedPoolError</span><span class="p">(</span><span class="n">PoolError</span><span class="p">):</span>
+    <span class="s2">&quot;Raised when a request enters a pool after the pool has been closed.&quot;</span>
+    <span class="k">pass</span>
+
+
+<span class="k">class</span> <span class="nc">LocationValueError</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">,</span> <span class="n">HTTPError</span><span class="p">):</span>
+    <span class="s2">&quot;Raised when there is something wrong with a given URL input.&quot;</span>
+    <span class="k">pass</span>
+
+
+<span class="k">class</span> <span class="nc">LocationParseError</span><span class="p">(</span><span class="n">LocationValueError</span><span class="p">):</span>
+    <span class="s2">&quot;Raised when get_host or similar fails to parse the URL input.&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">location</span><span class="p">):</span>
+        <span class="n">message</span> <span class="o">=</span> <span class="s2">&quot;Failed to parse: </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">location</span>
+        <span class="n">HTTPError</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">location</span> <span class="o">=</span> <span class="n">location</span>
+
+
+<span class="k">class</span> <span class="nc">ResponseError</span><span class="p">(</span><span class="n">HTTPError</span><span class="p">):</span>
+    <span class="s2">&quot;Used as a container for an error reason supplied in a MaxRetryError.&quot;</span>
+    <span class="n">GENERIC_ERROR</span> <span class="o">=</span> <span class="s1">&#39;too many error responses&#39;</span>
+    <span class="n">SPECIFIC_ERROR</span> <span class="o">=</span> <span class="s1">&#39;too many {status_code} error responses&#39;</span>
+
+
+<span class="k">class</span> <span class="nc">SecurityWarning</span><span class="p">(</span><span class="n">HTTPWarning</span><span class="p">):</span>
+    <span class="s2">&quot;Warned when perfoming security reducing actions&quot;</span>
+    <span class="k">pass</span>
+
+
+<span class="k">class</span> <span class="nc">SubjectAltNameWarning</span><span class="p">(</span><span class="n">SecurityWarning</span><span class="p">):</span>
+    <span class="s2">&quot;Warned when connecting to a host with a certificate missing a SAN.&quot;</span>
+    <span class="k">pass</span>
+
+
+<span class="k">class</span> <span class="nc">InsecureRequestWarning</span><span class="p">(</span><span class="n">SecurityWarning</span><span class="p">):</span>
+    <span class="s2">&quot;Warned when making an unverified HTTPS request.&quot;</span>
+    <span class="k">pass</span>
+
+
+<span class="k">class</span> <span class="nc">SystemTimeWarning</span><span class="p">(</span><span class="n">SecurityWarning</span><span class="p">):</span>
+    <span class="s2">&quot;Warned when system time is suspected to be wrong&quot;</span>
+    <span class="k">pass</span>
+
+
+<span class="k">class</span> <span class="nc">InsecurePlatformWarning</span><span class="p">(</span><span class="n">SecurityWarning</span><span class="p">):</span>
+    <span class="s2">&quot;Warned when certain SSL configuration is not available on a platform.&quot;</span>
+    <span class="k">pass</span>
+
+
+<span class="k">class</span> <span class="nc">SNIMissingWarning</span><span class="p">(</span><span class="n">HTTPWarning</span><span class="p">):</span>
+    <span class="s2">&quot;Warned when making a HTTPS request without SNI available.&quot;</span>
+    <span class="k">pass</span>
+
+
+<div class="viewcode-block" id="DependencyWarning"><a class="viewcode-back" href="../../../../generated/requests.DependencyWarning.html#requests.DependencyWarning">[docs]</a><span class="k">class</span> <span class="nc">DependencyWarning</span><span class="p">(</span><span class="n">HTTPWarning</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Warned when an attempt is made to import a module with missing optional</span>
+<span class="sd">    dependencies.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">pass</span></div>
+
+
+<span class="k">class</span> <span class="nc">ResponseNotChunked</span><span class="p">(</span><span class="n">ProtocolError</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">):</span>
+    <span class="s2">&quot;Response needs to be chunked in order to read it as chunks.&quot;</span>
+    <span class="k">pass</span>
+
+
+<span class="k">class</span> <span class="nc">ProxySchemeUnknown</span><span class="p">(</span><span class="ne">AssertionError</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">):</span>
+    <span class="s2">&quot;ProxyManager does not support the supplied scheme&quot;</span>
+    <span class="c1"># TODO(t-8ch): Stop inheriting from AssertionError in v2.0.</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">scheme</span><span class="p">):</span>
+        <span class="n">message</span> <span class="o">=</span> <span class="s2">&quot;Not supported proxy scheme </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">scheme</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">ProxySchemeUnknown</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+
+
+<span class="k">class</span> <span class="nc">HeaderParsingError</span><span class="p">(</span><span class="n">HTTPError</span><span class="p">):</span>
+    <span class="s2">&quot;Raised by assert_header_parsing, but we convert it to a log.warning statement.&quot;</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">defects</span><span class="p">,</span> <span class="n">unparsed_data</span><span class="p">):</span>
+        <span class="n">message</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">%s</span><span class="s1">, unparsed data: </span><span class="si">%r</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">defects</span> <span class="ow">or</span> <span class="s1">&#39;Unknown&#39;</span><span class="p">,</span> <span class="n">unparsed_data</span><span class="p">)</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">HeaderParsingError</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../../_static/copybutton.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

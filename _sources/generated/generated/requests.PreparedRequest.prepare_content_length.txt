@@ -1,0 +1,6 @@
+requests.PreparedRequest.prepare_content_length
+===============================================
+
+.. currentmodule:: requests
+
+.. automethod:: PreparedRequest.prepare_content_length

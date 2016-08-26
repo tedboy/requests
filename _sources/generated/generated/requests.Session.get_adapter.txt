@@ -1,0 +1,6 @@
+requests.Session.get_adapter
+============================
+
+.. currentmodule:: requests
+
+.. automethod:: Session.get_adapter

@@ -1,0 +1,6 @@
+requests.RequestException
+=========================
+
+.. currentmodule:: requests
+
+.. autoexception:: RequestException

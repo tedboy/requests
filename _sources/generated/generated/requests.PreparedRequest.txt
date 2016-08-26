@@ -1,0 +1,39 @@
+requests.PreparedRequest
+========================
+.. currentmodule:: requests
+.. autoclass:: PreparedRequest
+   :undoc-members:
+
+
+Methods
+-------
+.. autosummary::
+   :toctree:
+
+
+   ~PreparedRequest.__init__
+   ~PreparedRequest.copy
+   ~PreparedRequest.deregister_hook
+   ~PreparedRequest.prepare
+   ~PreparedRequest.prepare_auth
+   ~PreparedRequest.prepare_body
+   ~PreparedRequest.prepare_content_length
+   ~PreparedRequest.prepare_cookies
+   ~PreparedRequest.prepare_headers
+   ~PreparedRequest.prepare_hooks
+   ~PreparedRequest.prepare_method
+   ~PreparedRequest.prepare_url
+   ~PreparedRequest.register_hook
+
+
+
+
+
+Attributes
+----------
+.. autosummary::
+  :toctree:
+
+
+   ~PreparedRequest.path_url
+

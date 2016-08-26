@@ -1,0 +1,6 @@
+requests.Response.raise_for_status
+==================================
+
+.. currentmodule:: requests
+
+.. automethod:: Response.raise_for_status

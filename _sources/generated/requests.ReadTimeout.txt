@@ -1,0 +1,6 @@
+requests.ReadTimeout
+====================
+
+.. currentmodule:: requests
+
+.. autoexception:: ReadTimeout

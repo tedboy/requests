@@ -1,0 +1,6 @@
+requests.NullHandler.__init__
+=============================
+
+.. currentmodule:: requests
+
+.. automethod:: NullHandler.__init__

@@ -1,0 +1,258 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>4.3. OAuth 1 Authentication &mdash; Sphinx Skeleton</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Sphinx Skeleton" href="index.html"/>
+        <link rel="up" title="4. Authentication" href="official_doc.user.authentication.html"/>
+        <link rel="next" title="4.4. Other Authentication" href="auth4.html"/>
+        <link rel="prev" title="4.2. Digest Authentication" href="auth2.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Sphinx Skeleton
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="generated/requests.html">requests</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="user_guide.html">The User Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="official_doc.user.intro.html">1. Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="official_doc.user.quickstart.html">2. Quickstart</a></li>
+<li class="toctree-l2"><a class="reference internal" href="official_doc.user.advanced.html">3. Advanced Usage</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="official_doc.user.authentication.html">4. Authentication</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="auth1.html">4.1. Basic Authentication</a></li>
+<li class="toctree-l3"><a class="reference internal" href="auth2.html">4.2. Digest Authentication</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="">4.3. OAuth 1 Authentication</a></li>
+<li class="toctree-l3"><a class="reference internal" href="auth4.html">4.4. Other Authentication</a></li>
+<li class="toctree-l3"><a class="reference internal" href="auth5.html">4.5. New Forms of Authentication</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="official_doc.html">Other Stuffs from official doc</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Sphinx Skeleton</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="user_guide.html">The User Guide</a> &raquo;</li>
+        
+          <li><a href="official_doc.user.authentication.html">4. Authentication</a> &raquo;</li>
+        
+      <li>4.3. OAuth 1 Authentication</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/auth3.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="oauth-1-authentication">
+<h1>4.3. OAuth 1 Authentication<a class="headerlink" href="#oauth-1-authentication" title="Permalink to this headline">¶</a></h1>
+<p>A common form of authentication for several web APIs is OAuth. The <code class="docutils literal"><span class="pre">requests-oauthlib</span></code>
+library allows Requests users to easily make OAuth authenticated requests:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">requests</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">requests_oauthlib</span> <span class="kn">import</span> <span class="n">OAuth1</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://api.twitter.com/1.1/account/verify_credentials.json&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">auth</span> <span class="o">=</span> <span class="n">OAuth1</span><span class="p">(</span><span class="s1">&#39;YOUR_APP_KEY&#39;</span><span class="p">,</span> <span class="s1">&#39;YOUR_APP_SECRET&#39;</span><span class="p">,</span>
+<span class="go">                  &#39;USER_OAUTH_TOKEN&#39;, &#39;USER_OAUTH_TOKEN_SECRET&#39;)</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">auth</span><span class="o">=</span><span class="n">auth</span><span class="p">)</span>
+<span class="go">&lt;Response [200]&gt;</span>
+</pre></div>
+</div>
+<p>For more information on how to OAuth flow works, please see the official <a href="#id1"><span class="problematic" id="id2">`OAuth`_</span></a> website.
+For examples and documentation on requests-oauthlib, please see the <a href="#id3"><span class="problematic" id="id4">`requests_oauthlib`_</span></a>
+repository on GitHub</p>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="auth4.html" class="btn btn-neutral float-right" title="4.4. Other Authentication" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="auth2.html" class="btn btn-neutral" title="4.2. Digest Authentication" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/copybutton.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

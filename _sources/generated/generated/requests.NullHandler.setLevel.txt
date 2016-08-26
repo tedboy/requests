@@ -1,0 +1,6 @@
+requests.NullHandler.setLevel
+=============================
+
+.. currentmodule:: requests
+
+.. automethod:: NullHandler.setLevel

@@ -1,0 +1,37 @@
+requests.Session
+================
+.. currentmodule:: requests
+.. autoclass:: Session
+   :undoc-members:
+
+
+Methods
+-------
+.. autosummary::
+   :toctree:
+
+
+   ~Session.__init__
+   ~Session.close
+   ~Session.delete
+   ~Session.get
+   ~Session.get_adapter
+   ~Session.head
+   ~Session.merge_environment_settings
+   ~Session.mount
+   ~Session.options
+   ~Session.patch
+   ~Session.post
+   ~Session.prepare_request
+   ~Session.put
+   ~Session.rebuild_auth
+   ~Session.rebuild_method
+   ~Session.rebuild_proxies
+   ~Session.request
+   ~Session.resolve_redirects
+   ~Session.send
+
+
+
+
+

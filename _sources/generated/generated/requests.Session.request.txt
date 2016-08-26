@@ -1,0 +1,6 @@
+requests.Session.request
+========================
+
+.. currentmodule:: requests
+
+.. automethod:: Session.request

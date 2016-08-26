@@ -1,0 +1,6 @@
+requests.PreparedRequest.copy
+=============================
+
+.. currentmodule:: requests
+
+.. automethod:: PreparedRequest.copy

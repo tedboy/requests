@@ -1,0 +1,6 @@
+requests.head
+=============
+
+.. currentmodule:: requests
+
+.. autofunction:: head

@@ -1,0 +1,6 @@
+requests.NullHandler.format
+===========================
+
+.. currentmodule:: requests
+
+.. automethod:: NullHandler.format

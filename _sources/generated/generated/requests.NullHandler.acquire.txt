@@ -1,0 +1,6 @@
+requests.NullHandler.acquire
+============================
+
+.. currentmodule:: requests
+
+.. automethod:: NullHandler.acquire

@@ -1,0 +1,74 @@
+requests
+========
+
+.. automodule:: requests
+
+   
+   
+   Functions
+   ---------
+   .. autosummary::
+      :toctree:
+
+   
+      delete
+      get
+      head
+      options
+      patch
+      post
+      put
+      request
+      session
+   
+   
+
+   
+   
+   Classes
+   -------
+   .. autosummary::
+      :toctree:generated/
+      :template:class_custom.rst
+
+   
+      NullHandler
+      PreparedRequest
+      Request
+      Response
+      Session
+
+   .. toctree::
+       :maxdepth: 1
+       :hidden:
+
+   
+       generated/requests.NullHandler
+       generated/requests.PreparedRequest
+       generated/requests.Request
+       generated/requests.Response
+       generated/requests.Session
+
+   
+   
+
+   
+   
+   Exceptions
+   ----------
+   .. autosummary::
+      :toctree:
+
+   
+      ConnectTimeout
+      ConnectionError
+      DependencyWarning
+      FileModeWarning
+      HTTPError
+      ReadTimeout
+      RequestException
+      Timeout
+      TooManyRedirects
+      URLRequired
+   
+   

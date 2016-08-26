@@ -1,0 +1,6 @@
+requests.Session.post
+=====================
+
+.. currentmodule:: requests
+
+.. automethod:: Session.post

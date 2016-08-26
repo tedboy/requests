@@ -1,0 +1,312 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>requests.Response &mdash; Sphinx Skeleton</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Sphinx Skeleton" href="../../index.html"/>
+        <link rel="up" title="requests" href="../requests.html"/>
+        <link rel="next" title="requests.Response.__init__" href="requests.Response.__init__.html"/>
+        <link rel="prev" title="requests.Request.register_hook" href="requests.Request.register_hook.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Sphinx Skeleton
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../requests.html">requests</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../requests.html#requests-http-library">Requests HTTP library</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../requests.html#functions">Functions</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../requests.html#classes">Classes</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="requests.NullHandler.html">requests.NullHandler</a></li>
+<li class="toctree-l4"><a class="reference internal" href="requests.PreparedRequest.html">requests.PreparedRequest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="requests.Request.html">requests.Request</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="">requests.Response</a></li>
+<li class="toctree-l4"><a class="reference internal" href="requests.Session.html">requests.Session</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../requests.html#exceptions">Exceptions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../user_guide.html">The User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../official_doc.html">Other Stuffs from official doc</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Sphinx Skeleton</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../api.html">&lt;no title&gt;</a> &raquo;</li>
+        
+          <li><a href="../requests.html">requests</a> &raquo;</li>
+        
+      <li>requests.Response</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/generated/generated/requests.Response.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="requests-response">
+<h1>requests.Response<a class="headerlink" href="#requests-response" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="requests.Response">
+<em class="property">class </em><code class="descclassname">requests.</code><code class="descname">Response</code><a class="reference internal" href="../../_modules/requests/models.html#Response"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#requests.Response" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <a class="reference internal" href="#requests.Response" title="requests.Response"><code class="xref py py-class docutils literal"><span class="pre">Response</span></code></a> object, which contains a
+server&#8217;s response to an HTTP request.</p>
+</dd></dl>
+
+<div class="section" id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="requests.Response.__init__.html#requests.Response.__init__" title="requests.Response.__init__"><code class="xref py py-obj docutils literal"><span class="pre">__init__</span></code></a>()</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="requests.Response.close.html#requests.Response.close" title="requests.Response.close"><code class="xref py py-obj docutils literal"><span class="pre">close</span></code></a>()</td>
+<td>Releases the connection back to the pool.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="requests.Response.iter_content.html#requests.Response.iter_content" title="requests.Response.iter_content"><code class="xref py py-obj docutils literal"><span class="pre">iter_content</span></code></a>([chunk_size,&nbsp;decode_unicode])</td>
+<td>Iterates over the response data.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="requests.Response.iter_lines.html#requests.Response.iter_lines" title="requests.Response.iter_lines"><code class="xref py py-obj docutils literal"><span class="pre">iter_lines</span></code></a>([chunk_size,&nbsp;decode_unicode,&nbsp;...])</td>
+<td>Iterates over the response data, one line at a time.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="requests.Response.json.html#requests.Response.json" title="requests.Response.json"><code class="xref py py-obj docutils literal"><span class="pre">json</span></code></a>(**kwargs)</td>
+<td>Returns the json-encoded content of a response, if any.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="requests.Response.raise_for_status.html#requests.Response.raise_for_status" title="requests.Response.raise_for_status"><code class="xref py py-obj docutils literal"><span class="pre">raise_for_status</span></code></a>()</td>
+<td>Raises stored <a class="reference internal" href="../requests.HTTPError.html#requests.HTTPError" title="requests.HTTPError"><code class="xref py py-class docutils literal"><span class="pre">HTTPError</span></code></a>, if one occurred.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="attributes">
+<h2>Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="requests.Response.apparent_encoding.html#requests.Response.apparent_encoding" title="requests.Response.apparent_encoding"><code class="xref py py-obj docutils literal"><span class="pre">apparent_encoding</span></code></a></td>
+<td>The apparent encoding, provided by the chardet library</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="requests.Response.content.html#requests.Response.content" title="requests.Response.content"><code class="xref py py-obj docutils literal"><span class="pre">content</span></code></a></td>
+<td>Content of the response, in bytes.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="requests.Response.is_permanent_redirect.html#requests.Response.is_permanent_redirect" title="requests.Response.is_permanent_redirect"><code class="xref py py-obj docutils literal"><span class="pre">is_permanent_redirect</span></code></a></td>
+<td>True if this Response one of the permanent versions of redirect</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="requests.Response.is_redirect.html#requests.Response.is_redirect" title="requests.Response.is_redirect"><code class="xref py py-obj docutils literal"><span class="pre">is_redirect</span></code></a></td>
+<td>True if this Response is a well-formed HTTP redirect that could have been processed automatically (by <a class="reference internal" href="requests.Session.resolve_redirects.html#requests.Session.resolve_redirects" title="requests.Session.resolve_redirects"><code class="xref py py-meth docutils literal"><span class="pre">Session.resolve_redirects()</span></code></a>).</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="requests.Response.links.html#requests.Response.links" title="requests.Response.links"><code class="xref py py-obj docutils literal"><span class="pre">links</span></code></a></td>
+<td>Returns the parsed header links of the response, if any.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="requests.Response.ok.html#requests.Response.ok" title="requests.Response.ok"><code class="xref py py-obj docutils literal"><span class="pre">ok</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="requests.Response.text.html#requests.Response.text" title="requests.Response.text"><code class="xref py py-obj docutils literal"><span class="pre">text</span></code></a></td>
+<td>Content of the response, in unicode.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="requests.Response.__init__.html" class="btn btn-neutral float-right" title="requests.Response.__init__" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="requests.Request.register_hook.html" class="btn btn-neutral" title="requests.Request.register_hook" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/copybutton.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

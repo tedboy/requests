@@ -1,0 +1,6 @@
+requests.NullHandler.name
+=========================
+
+.. currentmodule:: requests
+
+.. autoattribute:: NullHandler.name

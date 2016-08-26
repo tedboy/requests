@@ -1,0 +1,6 @@
+requests.Session.merge_environment_settings
+===========================================
+
+.. currentmodule:: requests
+
+.. automethod:: Session.merge_environment_settings

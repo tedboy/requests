@@ -1,0 +1,6 @@
+requests.Response.__init__
+==========================
+
+.. currentmodule:: requests
+
+.. automethod:: Response.__init__

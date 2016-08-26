@@ -1,0 +1,6 @@
+requests.ConnectionError
+========================
+
+.. currentmodule:: requests
+
+.. autoexception:: ConnectionError

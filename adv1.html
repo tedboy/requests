@@ -1,0 +1,320 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>3.1. Session Objects &mdash; Sphinx Skeleton</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Sphinx Skeleton" href="index.html"/>
+        <link rel="up" title="3. Advanced Usage" href="official_doc.user.advanced.html"/>
+        <link rel="next" title="3.2. Request and Response Objects" href="adv2.html"/>
+        <link rel="prev" title="3. Advanced Usage" href="official_doc.user.advanced.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Sphinx Skeleton
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="generated/requests.html">requests</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="user_guide.html">The User Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="official_doc.user.intro.html">1. Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="official_doc.user.quickstart.html">2. Quickstart</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="official_doc.user.advanced.html">3. Advanced Usage</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="">3.1. Session Objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="adv2.html">3.2. Request and Response Objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="adv3.html">3.3. Prepared Requests</a></li>
+<li class="toctree-l3"><a class="reference internal" href="adv4.html">3.4. SSL Cert Verification</a></li>
+<li class="toctree-l3"><a class="reference internal" href="adv5.html">3.5. CA Certificates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="adv6.html">3.6. Body Content Workflow</a></li>
+<li class="toctree-l3"><a class="reference internal" href="adv7.html">3.7. Keep-Alive</a></li>
+<li class="toctree-l3"><a class="reference internal" href="adv8.html">3.8. Streaming Uploads</a></li>
+<li class="toctree-l3"><a class="reference internal" href="adv9.html">3.9. Chunk-Encoded Requests</a></li>
+<li class="toctree-l3"><a class="reference internal" href="adv10.html">3.10. POST Multiple Multipart-Encoded Files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="adv11.html">3.11. Event Hooks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="adv12.html">3.12. Custom Authentication</a></li>
+<li class="toctree-l3"><a class="reference internal" href="adv13.html">3.13. Streaming Requests</a></li>
+<li class="toctree-l3"><a class="reference internal" href="adv14.html">3.14. Proxies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="adv15.html">3.15. Compliance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="adv16.html">3.16. HTTP Verbs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="adv17.html">3.17. Link Headers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="adv18.html">3.18. Transport Adapters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="adv19.html">3.19. Blocking Or Non-Blocking?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="adv20.html">3.20. Header Ordering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="adv21.html">3.21. Timeouts</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="official_doc.user.authentication.html">4. Authentication</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="official_doc.html">Other Stuffs from official doc</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Sphinx Skeleton</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="user_guide.html">The User Guide</a> &raquo;</li>
+        
+          <li><a href="official_doc.user.advanced.html">3. Advanced Usage</a> &raquo;</li>
+        
+      <li>3.1. Session Objects</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/adv1.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="session-objects">
+<span id="id1"></span><h1>3.1. Session Objects<a class="headerlink" href="#session-objects" title="Permalink to this headline">¶</a></h1>
+<p>The Session object allows you to persist certain parameters across
+requests. It also persists cookies across all requests made from the
+Session instance, and will use <code class="docutils literal"><span class="pre">urllib3</span></code>&#8216;s <a href="#id2"><span class="problematic" id="id3">`connection pooling`_</span></a>. So if
+you&#8217;re making several requests to the same host, the underlying TCP
+connection will be reused, which can result in a significant performance
+increase (see <a href="#id4"><span class="problematic" id="id5">`HTTP persistent connection`_</span></a>).</p>
+<p>A Session object has all the methods of the main Requests API.</p>
+<p>Let&#8217;s persist some cookies across requests:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span>
+
+<span class="n">s</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;http://httpbin.org/cookies/set/sessioncookie/123456789&#39;</span><span class="p">)</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;http://httpbin.org/cookies&#39;</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+<span class="c1"># &#39;{&quot;cookies&quot;: {&quot;sessioncookie&quot;: &quot;123456789&quot;}}&#39;</span>
+</pre></div>
+</div>
+<p>Sessions can also be used to provide default data to the request methods. This
+is done by providing data to the properties on a Session object:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span>
+<span class="n">s</span><span class="o">.</span><span class="n">auth</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;user&#39;</span><span class="p">,</span> <span class="s1">&#39;pass&#39;</span><span class="p">)</span>
+<span class="n">s</span><span class="o">.</span><span class="n">headers</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;x-test&#39;</span><span class="p">:</span> <span class="s1">&#39;true&#39;</span><span class="p">})</span>
+
+<span class="c1"># both &#39;x-test&#39; and &#39;x-test2&#39; are sent</span>
+<span class="n">s</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;http://httpbin.org/headers&#39;</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;x-test2&#39;</span><span class="p">:</span> <span class="s1">&#39;true&#39;</span><span class="p">})</span>
+</pre></div>
+</div>
+<p>Any dictionaries that you pass to a request method will be merged with the
+session-level values that are set. The method-level parameters override session
+parameters.</p>
+<p>Note, however, that method-level parameters will <em>not</em> be persisted across
+requests, even if using a session. This example will only send the cookies
+with the first request, but not the second:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span>
+
+<span class="n">r</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;http://httpbin.org/cookies&#39;</span><span class="p">,</span> <span class="n">cookies</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;from-my&#39;</span><span class="p">:</span> <span class="s1">&#39;browser&#39;</span><span class="p">})</span>
+<span class="k">print</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+<span class="c1"># &#39;{&quot;cookies&quot;: {&quot;from-my&quot;: &quot;browser&quot;}}&#39;</span>
+
+<span class="n">r</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;http://httpbin.org/cookies&#39;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+<span class="c1"># &#39;{&quot;cookies&quot;: {}}&#39;</span>
+</pre></div>
+</div>
+<p>If you want to manually add cookies to your session, use the
+<span class="xref std std-ref">Cookie utility functions</span> to manipulate
+<code class="xref py py-attr docutils literal"><span class="pre">Session.cookies</span></code>.</p>
+<p>Sessions can also be used as context managers:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">requests</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span> <span class="k">as</span> <span class="n">s</span><span class="p">:</span>
+    <span class="n">s</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;http://httpbin.org/cookies/set/sessioncookie/123456789&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This will make sure the session is closed as soon as the <code class="docutils literal"><span class="pre">with</span></code> block is
+exited, even if unhandled exceptions occurred.</p>
+<div class="admonition-remove-a-value-from-a-dict-parameter admonition">
+<p class="first admonition-title">Remove a Value From a Dict Parameter</p>
+<p class="last">Sometimes you&#8217;ll want to omit session-level keys from a dict parameter. To
+do this, you simply set that key&#8217;s value to <code class="docutils literal"><span class="pre">None</span></code> in the method-level
+parameter. It will automatically be omitted.</p>
+</div>
+<p>All values that are contained within a session are directly available to you.
+See the <span class="xref std std-ref">Session API Docs</span> to learn more.</p>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="adv2.html" class="btn btn-neutral float-right" title="3.2. Request and Response Objects" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="official_doc.user.advanced.html" class="btn btn-neutral" title="3. Advanced Usage" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/copybutton.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

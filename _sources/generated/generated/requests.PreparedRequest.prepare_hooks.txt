@@ -1,0 +1,6 @@
+requests.PreparedRequest.prepare_hooks
+======================================
+
+.. currentmodule:: requests
+
+.. automethod:: PreparedRequest.prepare_hooks

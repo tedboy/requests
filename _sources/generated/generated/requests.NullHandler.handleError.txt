@@ -1,0 +1,6 @@
+requests.NullHandler.handleError
+================================
+
+.. currentmodule:: requests
+
+.. automethod:: NullHandler.handleError

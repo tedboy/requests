@@ -1,0 +1,6 @@
+requests.Timeout
+================
+
+.. currentmodule:: requests
+
+.. autoexception:: Timeout

@@ -1,0 +1,6 @@
+requests.Response.apparent_encoding
+===================================
+
+.. currentmodule:: requests
+
+.. autoattribute:: Response.apparent_encoding

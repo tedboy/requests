@@ -1,0 +1,6 @@
+requests.NullHandler.filter
+===========================
+
+.. currentmodule:: requests
+
+.. automethod:: NullHandler.filter

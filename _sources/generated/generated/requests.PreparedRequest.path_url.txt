@@ -1,0 +1,6 @@
+requests.PreparedRequest.path_url
+=================================
+
+.. currentmodule:: requests
+
+.. autoattribute:: PreparedRequest.path_url

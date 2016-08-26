@@ -1,0 +1,6 @@
+requests.options
+================
+
+.. currentmodule:: requests
+
+.. autofunction:: options

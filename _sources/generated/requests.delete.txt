@@ -1,0 +1,6 @@
+requests.delete
+===============
+
+.. currentmodule:: requests
+
+.. autofunction:: delete

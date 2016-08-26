@@ -1,0 +1,6 @@
+requests.Session.close
+======================
+
+.. currentmodule:: requests
+
+.. automethod:: Session.close

@@ -1,0 +1,6 @@
+requests.ConnectTimeout
+=======================
+
+.. currentmodule:: requests
+
+.. autoexception:: ConnectTimeout

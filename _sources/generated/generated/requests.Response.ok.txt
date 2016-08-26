@@ -1,0 +1,6 @@
+requests.Response.ok
+====================
+
+.. currentmodule:: requests
+
+.. autoattribute:: Response.ok

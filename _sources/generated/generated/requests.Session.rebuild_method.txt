@@ -1,0 +1,6 @@
+requests.Session.rebuild_method
+===============================
+
+.. currentmodule:: requests
+
+.. automethod:: Session.rebuild_method

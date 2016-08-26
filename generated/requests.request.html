@@ -1,0 +1,297 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>requests.request &mdash; Sphinx Skeleton</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Sphinx Skeleton" href="../index.html"/>
+        <link rel="up" title="requests" href="requests.html"/>
+        <link rel="next" title="requests.session" href="requests.session.html"/>
+        <link rel="prev" title="requests.put" href="requests.put.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Sphinx Skeleton
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="requests.html">requests</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="requests.html#requests-http-library">Requests HTTP library</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="requests.html#functions">Functions</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="requests.delete.html">requests.delete</a></li>
+<li class="toctree-l4"><a class="reference internal" href="requests.get.html">requests.get</a></li>
+<li class="toctree-l4"><a class="reference internal" href="requests.head.html">requests.head</a></li>
+<li class="toctree-l4"><a class="reference internal" href="requests.options.html">requests.options</a></li>
+<li class="toctree-l4"><a class="reference internal" href="requests.patch.html">requests.patch</a></li>
+<li class="toctree-l4"><a class="reference internal" href="requests.post.html">requests.post</a></li>
+<li class="toctree-l4"><a class="reference internal" href="requests.put.html">requests.put</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="">requests.request</a></li>
+<li class="toctree-l4"><a class="reference internal" href="requests.session.html">requests.session</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="requests.html#classes">Classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="requests.html#exceptions">Exceptions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../user_guide.html">The User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../official_doc.html">Other Stuffs from official doc</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Sphinx Skeleton</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../api.html">&lt;no title&gt;</a> &raquo;</li>
+        
+          <li><a href="requests.html">requests</a> &raquo;</li>
+        
+      <li>requests.request</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/generated/requests.request.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="requests-request">
+<h1>requests.request<a class="headerlink" href="#requests-request" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt id="requests.request">
+<code class="descclassname">requests.</code><code class="descname">request</code><span class="sig-paren">(</span><em>method</em>, <em>url</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/requests/api.html#request"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#requests.request" title="Permalink to this definition">¶</a></dt>
+<dd><p>Constructs and sends a <a class="reference internal" href="generated/requests.Request.html#requests.Request" title="requests.Request"><code class="xref py py-class docutils literal"><span class="pre">Request</span></code></a>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>method</strong> &#8211; method for the new <a class="reference internal" href="generated/requests.Request.html#requests.Request" title="requests.Request"><code class="xref py py-class docutils literal"><span class="pre">Request</span></code></a> object.</li>
+<li><strong>url</strong> &#8211; URL for the new <a class="reference internal" href="generated/requests.Request.html#requests.Request" title="requests.Request"><code class="xref py py-class docutils literal"><span class="pre">Request</span></code></a> object.</li>
+<li><strong>params</strong> &#8211; (optional) Dictionary or bytes to be sent in the query string for the <a class="reference internal" href="generated/requests.Request.html#requests.Request" title="requests.Request"><code class="xref py py-class docutils literal"><span class="pre">Request</span></code></a>.</li>
+<li><strong>data</strong> &#8211; (optional) Dictionary, bytes, or file-like object to send in the body of the <a class="reference internal" href="generated/requests.Request.html#requests.Request" title="requests.Request"><code class="xref py py-class docutils literal"><span class="pre">Request</span></code></a>.</li>
+<li><strong>json</strong> &#8211; (optional) json data to send in the body of the <a class="reference internal" href="generated/requests.Request.html#requests.Request" title="requests.Request"><code class="xref py py-class docutils literal"><span class="pre">Request</span></code></a>.</li>
+<li><strong>headers</strong> &#8211; (optional) Dictionary of HTTP Headers to send with the <a class="reference internal" href="generated/requests.Request.html#requests.Request" title="requests.Request"><code class="xref py py-class docutils literal"><span class="pre">Request</span></code></a>.</li>
+<li><strong>cookies</strong> &#8211; (optional) Dict or CookieJar object to send with the <a class="reference internal" href="generated/requests.Request.html#requests.Request" title="requests.Request"><code class="xref py py-class docutils literal"><span class="pre">Request</span></code></a>.</li>
+<li><strong>files</strong> &#8211; (optional) Dictionary of <code class="docutils literal"><span class="pre">'name':</span> <span class="pre">file-like-objects</span></code> (or <code class="docutils literal"><span class="pre">{'name':</span> <span class="pre">file-tuple}</span></code>) for multipart encoding upload.
+<code class="docutils literal"><span class="pre">file-tuple</span></code> can be a 2-tuple <code class="docutils literal"><span class="pre">('filename',</span> <span class="pre">fileobj)</span></code>, 3-tuple <code class="docutils literal"><span class="pre">('filename',</span> <span class="pre">fileobj,</span> <span class="pre">'content_type')</span></code>
+or a 4-tuple <code class="docutils literal"><span class="pre">('filename',</span> <span class="pre">fileobj,</span> <span class="pre">'content_type',</span> <span class="pre">custom_headers)</span></code>, where <code class="docutils literal"><span class="pre">'content-type'</span></code> is a string
+defining the content type of the given file and <code class="docutils literal"><span class="pre">custom_headers</span></code> a dict-like object containing additional headers
+to add for the file.</li>
+<li><strong>auth</strong> &#8211; (optional) Auth tuple to enable Basic/Digest/Custom HTTP Auth.</li>
+<li><strong>timeout</strong> (<em>float or tuple</em>) &#8211; (optional) How long to wait for the server to send data
+before giving up, as a float, or a <a class="reference internal" href="../adv21.html#timeouts"><span>(connect timeout, read
+timeout)</span></a> tuple.</li>
+<li><strong>allow_redirects</strong> (<em>bool</em>) &#8211; (optional) Boolean. Set to True if POST/PUT/DELETE redirect following is allowed.</li>
+<li><strong>proxies</strong> &#8211; (optional) Dictionary mapping protocol to the URL of the proxy.</li>
+<li><strong>verify</strong> &#8211; (optional) whether the SSL cert will be verified. A CA_BUNDLE path can also be provided. Defaults to <code class="docutils literal"><span class="pre">True</span></code>.</li>
+<li><strong>stream</strong> &#8211; (optional) if <code class="docutils literal"><span class="pre">False</span></code>, the response content will be immediately downloaded.</li>
+<li><strong>cert</strong> &#8211; (optional) if String, path to ssl client cert file (.pem). If Tuple, (&#8216;cert&#8217;, &#8216;key&#8217;) pair.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><a class="reference internal" href="generated/requests.Response.html#requests.Response" title="requests.Response"><code class="xref py py-class docutils literal"><span class="pre">Response</span></code></a> object</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="generated/requests.Response.html#requests.Response" title="requests.Response">requests.Response</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Usage:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">requests</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">req</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s1">&#39;GET&#39;</span><span class="p">,</span> <span class="s1">&#39;http://httpbin.org/get&#39;</span><span class="p">)</span>
+<span class="go">&lt;Response [200]&gt;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="requests.session.html" class="btn btn-neutral float-right" title="requests.session" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="requests.put.html" class="btn btn-neutral" title="requests.put" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/copybutton.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

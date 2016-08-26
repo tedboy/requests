@@ -1,0 +1,6 @@
+requests.Response.is_redirect
+=============================
+
+.. currentmodule:: requests
+
+.. autoattribute:: Response.is_redirect

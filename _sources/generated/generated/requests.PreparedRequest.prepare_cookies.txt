@@ -1,0 +1,6 @@
+requests.PreparedRequest.prepare_cookies
+========================================
+
+.. currentmodule:: requests
+
+.. automethod:: PreparedRequest.prepare_cookies

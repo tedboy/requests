@@ -1,0 +1,6 @@
+requests.Session.prepare_request
+================================
+
+.. currentmodule:: requests
+
+.. automethod:: Session.prepare_request

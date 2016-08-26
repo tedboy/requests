@@ -1,0 +1,6 @@
+requests.NullHandler.release
+============================
+
+.. currentmodule:: requests
+
+.. automethod:: NullHandler.release

@@ -1,0 +1,332 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>requests.Session &mdash; Sphinx Skeleton</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Sphinx Skeleton" href="../../index.html"/>
+        <link rel="up" title="requests" href="../requests.html"/>
+        <link rel="next" title="requests.Session.__init__" href="requests.Session.__init__.html"/>
+        <link rel="prev" title="requests.Response.text" href="requests.Response.text.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Sphinx Skeleton
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../requests.html">requests</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../requests.html#requests-http-library">Requests HTTP library</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../requests.html#functions">Functions</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../requests.html#classes">Classes</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="requests.NullHandler.html">requests.NullHandler</a></li>
+<li class="toctree-l4"><a class="reference internal" href="requests.PreparedRequest.html">requests.PreparedRequest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="requests.Request.html">requests.Request</a></li>
+<li class="toctree-l4"><a class="reference internal" href="requests.Response.html">requests.Response</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="">requests.Session</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../requests.html#exceptions">Exceptions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../user_guide.html">The User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../official_doc.html">Other Stuffs from official doc</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Sphinx Skeleton</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../api.html">&lt;no title&gt;</a> &raquo;</li>
+        
+          <li><a href="../requests.html">requests</a> &raquo;</li>
+        
+      <li>requests.Session</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/generated/generated/requests.Session.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="requests-session">
+<h1>requests.Session<a class="headerlink" href="#requests-session" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="requests.Session">
+<em class="property">class </em><code class="descclassname">requests.</code><code class="descname">Session</code><a class="reference internal" href="../../_modules/requests/sessions.html#Session"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#requests.Session" title="Permalink to this definition">¶</a></dt>
+<dd><p>A Requests session.</p>
+<p>Provides cookie persistence, connection-pooling, and configuration.</p>
+<p>Basic Usage:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">requests</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;http://httpbin.org/get&#39;</span><span class="p">)</span>
+<span class="go">&lt;Response [200]&gt;</span>
+</pre></div>
+</div>
+<p>Or as a context manager:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="n">requests</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span> <span class="k">as</span> <span class="n">s</span><span class="p">:</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="n">s</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;http://httpbin.org/get&#39;</span><span class="p">)</span>
+<span class="go">&lt;Response [200]&gt;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<div class="section" id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="requests.Session.__init__.html#requests.Session.__init__" title="requests.Session.__init__"><code class="xref py py-obj docutils literal"><span class="pre">__init__</span></code></a>()</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="requests.Session.close.html#requests.Session.close" title="requests.Session.close"><code class="xref py py-obj docutils literal"><span class="pre">close</span></code></a>()</td>
+<td>Closes all adapters and as such the session</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="requests.Session.delete.html#requests.Session.delete" title="requests.Session.delete"><code class="xref py py-obj docutils literal"><span class="pre">delete</span></code></a>(url,&nbsp;**kwargs)</td>
+<td>Sends a DELETE request.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="requests.Session.get.html#requests.Session.get" title="requests.Session.get"><code class="xref py py-obj docutils literal"><span class="pre">get</span></code></a>(url,&nbsp;**kwargs)</td>
+<td>Sends a GET request.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="requests.Session.get_adapter.html#requests.Session.get_adapter" title="requests.Session.get_adapter"><code class="xref py py-obj docutils literal"><span class="pre">get_adapter</span></code></a>(url)</td>
+<td>Returns the appropriate connection adapter for the given URL.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="requests.Session.head.html#requests.Session.head" title="requests.Session.head"><code class="xref py py-obj docutils literal"><span class="pre">head</span></code></a>(url,&nbsp;**kwargs)</td>
+<td>Sends a HEAD request.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="requests.Session.merge_environment_settings.html#requests.Session.merge_environment_settings" title="requests.Session.merge_environment_settings"><code class="xref py py-obj docutils literal"><span class="pre">merge_environment_settings</span></code></a>(url,&nbsp;proxies,&nbsp;...)</td>
+<td>Check the environment and merge it with some settings.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="requests.Session.mount.html#requests.Session.mount" title="requests.Session.mount"><code class="xref py py-obj docutils literal"><span class="pre">mount</span></code></a>(prefix,&nbsp;adapter)</td>
+<td>Registers a connection adapter to a prefix.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="requests.Session.options.html#requests.Session.options" title="requests.Session.options"><code class="xref py py-obj docutils literal"><span class="pre">options</span></code></a>(url,&nbsp;**kwargs)</td>
+<td>Sends a OPTIONS request.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="requests.Session.patch.html#requests.Session.patch" title="requests.Session.patch"><code class="xref py py-obj docutils literal"><span class="pre">patch</span></code></a>(url[,&nbsp;data])</td>
+<td>Sends a PATCH request.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="requests.Session.post.html#requests.Session.post" title="requests.Session.post"><code class="xref py py-obj docutils literal"><span class="pre">post</span></code></a>(url[,&nbsp;data,&nbsp;json])</td>
+<td>Sends a POST request.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="requests.Session.prepare_request.html#requests.Session.prepare_request" title="requests.Session.prepare_request"><code class="xref py py-obj docutils literal"><span class="pre">prepare_request</span></code></a>(request)</td>
+<td>Constructs a <a class="reference internal" href="requests.PreparedRequest.html#requests.PreparedRequest" title="requests.PreparedRequest"><code class="xref py py-class docutils literal"><span class="pre">PreparedRequest</span></code></a> for transmission and returns it.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="requests.Session.put.html#requests.Session.put" title="requests.Session.put"><code class="xref py py-obj docutils literal"><span class="pre">put</span></code></a>(url[,&nbsp;data])</td>
+<td>Sends a PUT request.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="requests.Session.rebuild_auth.html#requests.Session.rebuild_auth" title="requests.Session.rebuild_auth"><code class="xref py py-obj docutils literal"><span class="pre">rebuild_auth</span></code></a>(prepared_request,&nbsp;response)</td>
+<td>When being redirected we may want to strip authentication from the request to avoid leaking credentials.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="requests.Session.rebuild_method.html#requests.Session.rebuild_method" title="requests.Session.rebuild_method"><code class="xref py py-obj docutils literal"><span class="pre">rebuild_method</span></code></a>(prepared_request,&nbsp;response)</td>
+<td>When being redirected we may want to change the method of the request based on certain specs or browser behavior.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="requests.Session.rebuild_proxies.html#requests.Session.rebuild_proxies" title="requests.Session.rebuild_proxies"><code class="xref py py-obj docutils literal"><span class="pre">rebuild_proxies</span></code></a>(prepared_request,&nbsp;proxies)</td>
+<td>This method re-evaluates the proxy configuration by considering the environment variables.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="requests.Session.request.html#requests.Session.request" title="requests.Session.request"><code class="xref py py-obj docutils literal"><span class="pre">request</span></code></a>(method,&nbsp;url[,&nbsp;params,&nbsp;data,&nbsp;...])</td>
+<td>Constructs a <a class="reference internal" href="requests.Request.html#requests.Request" title="requests.Request"><code class="xref py py-class docutils literal"><span class="pre">Request</span></code></a>, prepares it and sends it.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="requests.Session.resolve_redirects.html#requests.Session.resolve_redirects" title="requests.Session.resolve_redirects"><code class="xref py py-obj docutils literal"><span class="pre">resolve_redirects</span></code></a>(resp,&nbsp;req[,&nbsp;stream,&nbsp;...])</td>
+<td>Receives a Response.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="requests.Session.send.html#requests.Session.send" title="requests.Session.send"><code class="xref py py-obj docutils literal"><span class="pre">send</span></code></a>(request,&nbsp;**kwargs)</td>
+<td>Send a given PreparedRequest.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="requests.Session.__init__.html" class="btn btn-neutral float-right" title="requests.Session.__init__" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="requests.Response.text.html" class="btn btn-neutral" title="requests.Response.text" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/copybutton.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

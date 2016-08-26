@@ -1,0 +1,292 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>3. Advanced Usage &mdash; Sphinx Skeleton</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Sphinx Skeleton" href="index.html"/>
+        <link rel="up" title="The User Guide" href="user_guide.html"/>
+        <link rel="next" title="3.1. Session Objects" href="adv1.html"/>
+        <link rel="prev" title="2.15. Errors and Exceptions" href="qs15.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Sphinx Skeleton
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="generated/requests.html">requests</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="user_guide.html">The User Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="official_doc.user.intro.html">1. Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="official_doc.user.quickstart.html">2. Quickstart</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">3. Advanced Usage</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="adv1.html">3.1. Session Objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="adv2.html">3.2. Request and Response Objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="adv3.html">3.3. Prepared Requests</a></li>
+<li class="toctree-l3"><a class="reference internal" href="adv4.html">3.4. SSL Cert Verification</a></li>
+<li class="toctree-l3"><a class="reference internal" href="adv5.html">3.5. CA Certificates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="adv6.html">3.6. Body Content Workflow</a></li>
+<li class="toctree-l3"><a class="reference internal" href="adv7.html">3.7. Keep-Alive</a></li>
+<li class="toctree-l3"><a class="reference internal" href="adv8.html">3.8. Streaming Uploads</a></li>
+<li class="toctree-l3"><a class="reference internal" href="adv9.html">3.9. Chunk-Encoded Requests</a></li>
+<li class="toctree-l3"><a class="reference internal" href="adv10.html">3.10. POST Multiple Multipart-Encoded Files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="adv11.html">3.11. Event Hooks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="adv12.html">3.12. Custom Authentication</a></li>
+<li class="toctree-l3"><a class="reference internal" href="adv13.html">3.13. Streaming Requests</a></li>
+<li class="toctree-l3"><a class="reference internal" href="adv14.html">3.14. Proxies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="adv15.html">3.15. Compliance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="adv16.html">3.16. HTTP Verbs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="adv17.html">3.17. Link Headers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="adv18.html">3.18. Transport Adapters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="adv19.html">3.19. Blocking Or Non-Blocking?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="adv20.html">3.20. Header Ordering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="adv21.html">3.21. Timeouts</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="official_doc.user.authentication.html">4. Authentication</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="official_doc.html">Other Stuffs from official doc</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Sphinx Skeleton</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="user_guide.html">The User Guide</a> &raquo;</li>
+        
+      <li>3. Advanced Usage</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/official_doc.user.advanced.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="advanced-usage">
+<span id="advanced"></span><h1>3. Advanced Usage<a class="headerlink" href="#advanced-usage" title="Permalink to this headline">¶</a></h1>
+<p>This document covers some of Requests more advanced features.</p>
+<div class="toctree-wrapper compound" id="id1">
+<p class="caption"><span class="caption-text">Contents</span><a class="headerlink" href="#id1" title="Permalink to this toctree">¶</a></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="adv1.html">3.1. Session Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="adv2.html">3.2. Request and Response Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="adv3.html">3.3. Prepared Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="adv4.html">3.4. SSL Cert Verification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="adv5.html">3.5. CA Certificates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="adv6.html">3.6. Body Content Workflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="adv7.html">3.7. Keep-Alive</a></li>
+<li class="toctree-l1"><a class="reference internal" href="adv8.html">3.8. Streaming Uploads</a></li>
+<li class="toctree-l1"><a class="reference internal" href="adv9.html">3.9. Chunk-Encoded Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="adv10.html">3.10. POST Multiple Multipart-Encoded Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="adv11.html">3.11. Event Hooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="adv12.html">3.12. Custom Authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="adv13.html">3.13. Streaming Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="adv14.html">3.14. Proxies</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="adv14.html#socks">3.14.1. SOCKS</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="adv15.html">3.15. Compliance</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="adv15.html#encodings">3.15.1. Encodings</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="adv16.html">3.16. HTTP Verbs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="adv17.html">3.17. Link Headers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="adv18.html">3.18. Transport Adapters</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="adv18.html#example-specific-ssl-version">3.18.1. Example: Specific SSL Version</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="adv19.html">3.19. Blocking Or Non-Blocking?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="adv20.html">3.20. Header Ordering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="adv21.html">3.21. Timeouts</a></li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="adv1.html" class="btn btn-neutral float-right" title="3.1. Session Objects" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="qs15.html" class="btn btn-neutral" title="2.15. Errors and Exceptions" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/copybutton.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

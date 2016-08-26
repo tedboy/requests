@@ -1,0 +1,6 @@
+requests.Session.mount
+======================
+
+.. currentmodule:: requests
+
+.. automethod:: Session.mount

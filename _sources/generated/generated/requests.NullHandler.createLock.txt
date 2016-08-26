@@ -1,0 +1,6 @@
+requests.NullHandler.createLock
+===============================
+
+.. currentmodule:: requests
+
+.. automethod:: NullHandler.createLock

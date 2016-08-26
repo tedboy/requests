@@ -1,0 +1,6 @@
+requests.Session.send
+=====================
+
+.. currentmodule:: requests
+
+.. automethod:: Session.send

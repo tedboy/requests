@@ -1,0 +1,287 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>3.2. Request and Response Objects &mdash; Sphinx Skeleton</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Sphinx Skeleton" href="index.html"/>
+        <link rel="up" title="3. Advanced Usage" href="official_doc.user.advanced.html"/>
+        <link rel="next" title="3.3. Prepared Requests" href="adv3.html"/>
+        <link rel="prev" title="3.1. Session Objects" href="adv1.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Sphinx Skeleton
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="generated/requests.html">requests</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="user_guide.html">The User Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="official_doc.user.intro.html">1. Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="official_doc.user.quickstart.html">2. Quickstart</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="official_doc.user.advanced.html">3. Advanced Usage</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="adv1.html">3.1. Session Objects</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="">3.2. Request and Response Objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="adv3.html">3.3. Prepared Requests</a></li>
+<li class="toctree-l3"><a class="reference internal" href="adv4.html">3.4. SSL Cert Verification</a></li>
+<li class="toctree-l3"><a class="reference internal" href="adv5.html">3.5. CA Certificates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="adv6.html">3.6. Body Content Workflow</a></li>
+<li class="toctree-l3"><a class="reference internal" href="adv7.html">3.7. Keep-Alive</a></li>
+<li class="toctree-l3"><a class="reference internal" href="adv8.html">3.8. Streaming Uploads</a></li>
+<li class="toctree-l3"><a class="reference internal" href="adv9.html">3.9. Chunk-Encoded Requests</a></li>
+<li class="toctree-l3"><a class="reference internal" href="adv10.html">3.10. POST Multiple Multipart-Encoded Files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="adv11.html">3.11. Event Hooks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="adv12.html">3.12. Custom Authentication</a></li>
+<li class="toctree-l3"><a class="reference internal" href="adv13.html">3.13. Streaming Requests</a></li>
+<li class="toctree-l3"><a class="reference internal" href="adv14.html">3.14. Proxies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="adv15.html">3.15. Compliance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="adv16.html">3.16. HTTP Verbs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="adv17.html">3.17. Link Headers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="adv18.html">3.18. Transport Adapters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="adv19.html">3.19. Blocking Or Non-Blocking?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="adv20.html">3.20. Header Ordering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="adv21.html">3.21. Timeouts</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="official_doc.user.authentication.html">4. Authentication</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="official_doc.html">Other Stuffs from official doc</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Sphinx Skeleton</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="user_guide.html">The User Guide</a> &raquo;</li>
+        
+          <li><a href="official_doc.user.advanced.html">3. Advanced Usage</a> &raquo;</li>
+        
+      <li>3.2. Request and Response Objects</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/adv2.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="request-and-response-objects">
+<span id="id1"></span><h1>3.2. Request and Response Objects<a class="headerlink" href="#request-and-response-objects" title="Permalink to this headline">¶</a></h1>
+<p>Whenever a call is made to <code class="docutils literal"><span class="pre">requests.get()</span></code> and friends, you are doing two
+major things. First, you are constructing a <code class="docutils literal"><span class="pre">Request</span></code> object which will be
+sent off to a server to request or query some resource. Second, a <code class="docutils literal"><span class="pre">Response</span></code>
+object is generated once Requests gets a response back from the server.
+The <code class="docutils literal"><span class="pre">Response</span></code> object contains all of the information returned by the server and
+also contains the <code class="docutils literal"><span class="pre">Request</span></code> object you created originally. Here is a simple
+request to get some very important information from Wikipedia&#8217;s servers:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;http://en.wikipedia.org/wiki/Monty_Python&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>If we want to access the headers the server sent back to us, we do this:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">r</span><span class="o">.</span><span class="n">headers</span>
+<span class="go">{&#39;content-length&#39;: &#39;56170&#39;, &#39;x-content-type-options&#39;: &#39;nosniff&#39;, &#39;x-cache&#39;:</span>
+<span class="go">&#39;HIT from cp1006.eqiad.wmnet, MISS from cp1010.eqiad.wmnet&#39;, &#39;content-encoding&#39;:</span>
+<span class="go">&#39;gzip&#39;, &#39;age&#39;: &#39;3080&#39;, &#39;content-language&#39;: &#39;en&#39;, &#39;vary&#39;: &#39;Accept-Encoding,Cookie&#39;,</span>
+<span class="go">&#39;server&#39;: &#39;Apache&#39;, &#39;last-modified&#39;: &#39;Wed, 13 Jun 2012 01:33:50 GMT&#39;,</span>
+<span class="go">&#39;connection&#39;: &#39;close&#39;, &#39;cache-control&#39;: &#39;private, s-maxage=0, max-age=0,</span>
+<span class="go">must-revalidate&#39;, &#39;date&#39;: &#39;Thu, 14 Jun 2012 12:59:39 GMT&#39;, &#39;content-type&#39;:</span>
+<span class="go">&#39;text/html; charset=UTF-8&#39;, &#39;x-cache-lookup&#39;: &#39;HIT from cp1006.eqiad.wmnet:3128,</span>
+<span class="go">MISS from cp1010.eqiad.wmnet:80&#39;}</span>
+</pre></div>
+</div>
+<p>However, if we want to get the headers we sent the server, we simply access the
+request, and then the request&#8217;s headers:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">r</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">headers</span>
+<span class="go">{&#39;Accept-Encoding&#39;: &#39;identity, deflate, compress, gzip&#39;,</span>
+<span class="go">&#39;Accept&#39;: &#39;*/*&#39;, &#39;User-Agent&#39;: &#39;python-requests/1.2.0&#39;}</span>
+</pre></div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="adv3.html" class="btn btn-neutral float-right" title="3.3. Prepared Requests" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="adv1.html" class="btn btn-neutral" title="3.1. Session Objects" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/copybutton.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

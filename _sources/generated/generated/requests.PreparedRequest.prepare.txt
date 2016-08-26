@@ -1,0 +1,6 @@
+requests.PreparedRequest.prepare
+================================
+
+.. currentmodule:: requests
+
+.. automethod:: PreparedRequest.prepare

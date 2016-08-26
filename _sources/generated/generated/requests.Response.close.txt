@@ -1,0 +1,6 @@
+requests.Response.close
+=======================
+
+.. currentmodule:: requests
+
+.. automethod:: Response.close

@@ -1,0 +1,22 @@
+requests.Request
+================
+.. currentmodule:: requests
+.. autoclass:: Request
+   :undoc-members:
+
+
+Methods
+-------
+.. autosummary::
+   :toctree:
+
+
+   ~Request.__init__
+   ~Request.deregister_hook
+   ~Request.prepare
+   ~Request.register_hook
+
+
+
+
+

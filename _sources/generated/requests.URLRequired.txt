@@ -1,0 +1,6 @@
+requests.URLRequired
+====================
+
+.. currentmodule:: requests
+
+.. autoexception:: URLRequired

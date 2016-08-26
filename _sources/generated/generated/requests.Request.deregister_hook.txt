@@ -1,0 +1,6 @@
+requests.Request.deregister_hook
+================================
+
+.. currentmodule:: requests
+
+.. automethod:: Request.deregister_hook

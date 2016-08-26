@@ -1,0 +1,6 @@
+requests.NullHandler.setFormatter
+=================================
+
+.. currentmodule:: requests
+
+.. automethod:: NullHandler.setFormatter

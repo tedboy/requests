@@ -1,0 +1,415 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>requests &mdash; Sphinx Skeleton</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Sphinx Skeleton" href="../index.html"/>
+        <link rel="up" title="&lt;no title&gt;" href="../api.html"/>
+        <link rel="next" title="requests.delete" href="requests.delete.html"/>
+        <link rel="prev" title="&lt;no title&gt;" href="../api.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Sphinx Skeleton
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="">requests</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#requests-http-library">Requests HTTP library</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#functions">Functions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="requests.delete.html">requests.delete</a></li>
+<li class="toctree-l4"><a class="reference internal" href="requests.get.html">requests.get</a></li>
+<li class="toctree-l4"><a class="reference internal" href="requests.head.html">requests.head</a></li>
+<li class="toctree-l4"><a class="reference internal" href="requests.options.html">requests.options</a></li>
+<li class="toctree-l4"><a class="reference internal" href="requests.patch.html">requests.patch</a></li>
+<li class="toctree-l4"><a class="reference internal" href="requests.post.html">requests.post</a></li>
+<li class="toctree-l4"><a class="reference internal" href="requests.put.html">requests.put</a></li>
+<li class="toctree-l4"><a class="reference internal" href="requests.request.html">requests.request</a></li>
+<li class="toctree-l4"><a class="reference internal" href="requests.session.html">requests.session</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#classes">Classes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="generated/requests.NullHandler.html">requests.NullHandler</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/requests.PreparedRequest.html">requests.PreparedRequest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/requests.Request.html">requests.Request</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/requests.Response.html">requests.Response</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/requests.Session.html">requests.Session</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#exceptions">Exceptions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="requests.ConnectTimeout.html">requests.ConnectTimeout</a></li>
+<li class="toctree-l4"><a class="reference internal" href="requests.ConnectionError.html">requests.ConnectionError</a></li>
+<li class="toctree-l4"><a class="reference internal" href="requests.DependencyWarning.html">requests.DependencyWarning</a></li>
+<li class="toctree-l4"><a class="reference internal" href="requests.FileModeWarning.html">requests.FileModeWarning</a></li>
+<li class="toctree-l4"><a class="reference internal" href="requests.HTTPError.html">requests.HTTPError</a></li>
+<li class="toctree-l4"><a class="reference internal" href="requests.ReadTimeout.html">requests.ReadTimeout</a></li>
+<li class="toctree-l4"><a class="reference internal" href="requests.RequestException.html">requests.RequestException</a></li>
+<li class="toctree-l4"><a class="reference internal" href="requests.Timeout.html">requests.Timeout</a></li>
+<li class="toctree-l4"><a class="reference internal" href="requests.TooManyRedirects.html">requests.TooManyRedirects</a></li>
+<li class="toctree-l4"><a class="reference internal" href="requests.URLRequired.html">requests.URLRequired</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../user_guide.html">The User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../official_doc.html">Other Stuffs from official doc</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Sphinx Skeleton</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../api.html">&lt;no title&gt;</a> &raquo;</li>
+        
+      <li>requests</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/generated/requests.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-requests">
+<span id="requests"></span><h1>requests<a class="headerlink" href="#module-requests" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="requests-http-library">
+<h2>Requests HTTP library<a class="headerlink" href="#requests-http-library" title="Permalink to this headline">¶</a></h2>
+<p>Requests is an HTTP library, written in Python, for human beings. Basic GET
+usage:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">requests</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;https://www.python.org&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r</span><span class="o">.</span><span class="n">status_code</span>
+<span class="go">200</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s1">&#39;Python is a programming language&#39;</span> <span class="ow">in</span> <span class="n">r</span><span class="o">.</span><span class="n">content</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<p>... or POST:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">payload</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">key1</span><span class="o">=</span><span class="s1">&#39;value1&#39;</span><span class="p">,</span> <span class="n">key2</span><span class="o">=</span><span class="s1">&#39;value2&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s1">&#39;http://httpbin.org/post&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+<span class="go">{</span>
+<span class="go">  ...</span>
+<span class="go">  &quot;form&quot;: {</span>
+<span class="go">    &quot;key2&quot;: &quot;value2&quot;,</span>
+<span class="go">    &quot;key1&quot;: &quot;value1&quot;</span>
+<span class="go">  },</span>
+<span class="go">  ...</span>
+<span class="go">}</span>
+</pre></div>
+</div>
+<p>The other HTTP methods are supported - see <cite>requests.api</cite>. Full documentation
+is at &lt;<a class="reference external" href="http://python-requests.org">http://python-requests.org</a>&gt;.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">copyright:</th><td class="field-body"><ol class="first loweralpha simple" start="3">
+<li>2016 by Kenneth Reitz.</li>
+</ol>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">license:</th><td class="field-body"><p class="first last">Apache 2.0, see LICENSE for more details.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="functions">
+<h3>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="requests.delete.html#requests.delete" title="requests.delete"><code class="xref py py-obj docutils literal"><span class="pre">delete</span></code></a>(url,&nbsp;**kwargs)</td>
+<td>Sends a DELETE request.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="requests.get.html#requests.get" title="requests.get"><code class="xref py py-obj docutils literal"><span class="pre">get</span></code></a>(url[,&nbsp;params])</td>
+<td>Sends a GET request.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="requests.head.html#requests.head" title="requests.head"><code class="xref py py-obj docutils literal"><span class="pre">head</span></code></a>(url,&nbsp;**kwargs)</td>
+<td>Sends a HEAD request.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="requests.options.html#requests.options" title="requests.options"><code class="xref py py-obj docutils literal"><span class="pre">options</span></code></a>(url,&nbsp;**kwargs)</td>
+<td>Sends a OPTIONS request.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="requests.patch.html#requests.patch" title="requests.patch"><code class="xref py py-obj docutils literal"><span class="pre">patch</span></code></a>(url[,&nbsp;data])</td>
+<td>Sends a PATCH request.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="requests.post.html#requests.post" title="requests.post"><code class="xref py py-obj docutils literal"><span class="pre">post</span></code></a>(url[,&nbsp;data,&nbsp;json])</td>
+<td>Sends a POST request.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="requests.put.html#requests.put" title="requests.put"><code class="xref py py-obj docutils literal"><span class="pre">put</span></code></a>(url[,&nbsp;data])</td>
+<td>Sends a PUT request.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="requests.request.html#requests.request" title="requests.request"><code class="xref py py-obj docutils literal"><span class="pre">request</span></code></a>(method,&nbsp;url,&nbsp;**kwargs)</td>
+<td>Constructs and sends a <a class="reference internal" href="generated/requests.Request.html#requests.Request" title="requests.Request"><code class="xref py py-class docutils literal"><span class="pre">Request</span></code></a>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="requests.session.html#requests.session" title="requests.session"><code class="xref py py-obj docutils literal"><span class="pre">session</span></code></a>()</td>
+<td>Returns a <a class="reference internal" href="generated/requests.Session.html#requests.Session" title="requests.Session"><code class="xref py py-class docutils literal"><span class="pre">Session</span></code></a> for context-management.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="classes">
+<h3>Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="generated/requests.NullHandler.html#requests.NullHandler" title="requests.NullHandler"><code class="xref py py-obj docutils literal"><span class="pre">NullHandler</span></code></a>([level])</td>
+<td>This handler does nothing.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/requests.PreparedRequest.html#requests.PreparedRequest" title="requests.PreparedRequest"><code class="xref py py-obj docutils literal"><span class="pre">PreparedRequest</span></code></a>()</td>
+<td>The fully mutable <a class="reference internal" href="generated/requests.PreparedRequest.html#requests.PreparedRequest" title="requests.PreparedRequest"><code class="xref py py-class docutils literal"><span class="pre">PreparedRequest</span></code></a> object, containing the exact bytes that will be sent to the server.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/requests.Request.html#requests.Request" title="requests.Request"><code class="xref py py-obj docutils literal"><span class="pre">Request</span></code></a>([method,&nbsp;url,&nbsp;headers,&nbsp;files,&nbsp;data,&nbsp;...])</td>
+<td>A user-created <a class="reference internal" href="generated/requests.Request.html#requests.Request" title="requests.Request"><code class="xref py py-class docutils literal"><span class="pre">Request</span></code></a> object.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/requests.Response.html#requests.Response" title="requests.Response"><code class="xref py py-obj docutils literal"><span class="pre">Response</span></code></a>()</td>
+<td>The <a class="reference internal" href="generated/requests.Response.html#requests.Response" title="requests.Response"><code class="xref py py-class docutils literal"><span class="pre">Response</span></code></a> object, which contains a server&#8217;s response to an HTTP request.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/requests.Session.html#requests.Session" title="requests.Session"><code class="xref py py-obj docutils literal"><span class="pre">Session</span></code></a>()</td>
+<td>A Requests session.</td>
+</tr>
+</tbody>
+</table>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+<div class="section" id="exceptions">
+<h3>Exceptions<a class="headerlink" href="#exceptions" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="requests.ConnectTimeout.html#requests.ConnectTimeout" title="requests.ConnectTimeout"><code class="xref py py-obj docutils literal"><span class="pre">ConnectTimeout</span></code></a>(*args,&nbsp;**kwargs)</td>
+<td>The request timed out while trying to connect to the remote server.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="requests.ConnectionError.html#requests.ConnectionError" title="requests.ConnectionError"><code class="xref py py-obj docutils literal"><span class="pre">ConnectionError</span></code></a>(*args,&nbsp;**kwargs)</td>
+<td>A Connection error occurred.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="requests.DependencyWarning.html#requests.DependencyWarning" title="requests.DependencyWarning"><code class="xref py py-obj docutils literal"><span class="pre">DependencyWarning</span></code></a></td>
+<td>Warned when an attempt is made to import a module with missing optional dependencies.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="requests.FileModeWarning.html#requests.FileModeWarning" title="requests.FileModeWarning"><code class="xref py py-obj docutils literal"><span class="pre">FileModeWarning</span></code></a></td>
+<td>A file was opened in text mode, but Requests determined its binary length.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="requests.HTTPError.html#requests.HTTPError" title="requests.HTTPError"><code class="xref py py-obj docutils literal"><span class="pre">HTTPError</span></code></a>(*args,&nbsp;**kwargs)</td>
+<td>An HTTP error occurred.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="requests.ReadTimeout.html#requests.ReadTimeout" title="requests.ReadTimeout"><code class="xref py py-obj docutils literal"><span class="pre">ReadTimeout</span></code></a>(*args,&nbsp;**kwargs)</td>
+<td>The server did not send any data in the allotted amount of time.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="requests.RequestException.html#requests.RequestException" title="requests.RequestException"><code class="xref py py-obj docutils literal"><span class="pre">RequestException</span></code></a>(*args,&nbsp;**kwargs)</td>
+<td>There was an ambiguous exception that occurred while handling your request.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="requests.Timeout.html#requests.Timeout" title="requests.Timeout"><code class="xref py py-obj docutils literal"><span class="pre">Timeout</span></code></a>(*args,&nbsp;**kwargs)</td>
+<td>The request timed out.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="requests.TooManyRedirects.html#requests.TooManyRedirects" title="requests.TooManyRedirects"><code class="xref py py-obj docutils literal"><span class="pre">TooManyRedirects</span></code></a>(*args,&nbsp;**kwargs)</td>
+<td>Too many redirects.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="requests.URLRequired.html#requests.URLRequired" title="requests.URLRequired"><code class="xref py py-obj docutils literal"><span class="pre">URLRequired</span></code></a>(*args,&nbsp;**kwargs)</td>
+<td>A valid URL is required to make a request.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="requests.delete.html" class="btn btn-neutral float-right" title="requests.delete" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../api.html" class="btn btn-neutral" title="&lt;no title&gt;" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/copybutton.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,6 @@
+requests.PreparedRequest.prepare_headers
+========================================
+
+.. currentmodule:: requests
+
+.. automethod:: PreparedRequest.prepare_headers

@@ -1,0 +1,6 @@
+requests.NullHandler.flush
+==========================
+
+.. currentmodule:: requests
+
+.. automethod:: NullHandler.flush

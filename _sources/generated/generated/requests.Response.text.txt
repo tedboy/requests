@@ -1,0 +1,6 @@
+requests.Response.text
+======================
+
+.. currentmodule:: requests
+
+.. autoattribute:: Response.text

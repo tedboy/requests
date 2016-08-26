@@ -1,0 +1,326 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>requests.exceptions &mdash; Sphinx Skeleton</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Sphinx Skeleton" href="../../index.html"/>
+        <link rel="up" title="Module code" href="../index.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Sphinx Skeleton
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../generated/requests.html">requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user_guide.html">The User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../official_doc.html">Other Stuffs from official doc</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Sphinx Skeleton</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+        
+      <li>requests.exceptions</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for requests.exceptions</h1><div class="highlight"><pre>
+<span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">requests.exceptions</span>
+<span class="sd">~~~~~~~~~~~~~~~~~~~</span>
+
+<span class="sd">This module contains the set of Requests&#39; exceptions.</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">from</span> <span class="nn">.packages.urllib3.exceptions</span> <span class="kn">import</span> <span class="n">HTTPError</span> <span class="k">as</span> <span class="n">BaseHTTPError</span>
+
+
+<div class="viewcode-block" id="RequestException"><a class="viewcode-back" href="../../generated/requests.RequestException.html#requests.RequestException">[docs]</a><span class="k">class</span> <span class="nc">RequestException</span><span class="p">(</span><span class="ne">IOError</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;There was an ambiguous exception that occurred while handling your</span>
+<span class="sd">    request.&quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Initialize RequestException with `request` and `response` objects.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;response&#39;</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">response</span> <span class="o">=</span> <span class="n">response</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">request</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;request&#39;</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">response</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span> <span class="ow">and</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">request</span> <span class="ow">and</span>
+                <span class="nb">hasattr</span><span class="p">(</span><span class="n">response</span><span class="p">,</span> <span class="s1">&#39;request&#39;</span><span class="p">)):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">request</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">response</span><span class="o">.</span><span class="n">request</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">RequestException</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="HTTPError"><a class="viewcode-back" href="../../generated/requests.HTTPError.html#requests.HTTPError">[docs]</a><span class="k">class</span> <span class="nc">HTTPError</span><span class="p">(</span><span class="n">RequestException</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;An HTTP error occurred.&quot;&quot;&quot;</span></div>
+
+
+<div class="viewcode-block" id="ConnectionError"><a class="viewcode-back" href="../../generated/requests.ConnectionError.html#requests.ConnectionError">[docs]</a><span class="k">class</span> <span class="nc">ConnectionError</span><span class="p">(</span><span class="n">RequestException</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;A Connection error occurred.&quot;&quot;&quot;</span></div>
+
+
+<span class="k">class</span> <span class="nc">ProxyError</span><span class="p">(</span><span class="n">ConnectionError</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;A proxy error occurred.&quot;&quot;&quot;</span>
+
+
+<span class="k">class</span> <span class="nc">SSLError</span><span class="p">(</span><span class="n">ConnectionError</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;An SSL error occurred.&quot;&quot;&quot;</span>
+
+
+<div class="viewcode-block" id="Timeout"><a class="viewcode-back" href="../../generated/requests.Timeout.html#requests.Timeout">[docs]</a><span class="k">class</span> <span class="nc">Timeout</span><span class="p">(</span><span class="n">RequestException</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;The request timed out.</span>
+
+<span class="sd">    Catching this error will catch both</span>
+<span class="sd">    :exc:`~requests.exceptions.ConnectTimeout` and</span>
+<span class="sd">    :exc:`~requests.exceptions.ReadTimeout` errors.</span>
+<span class="sd">    &quot;&quot;&quot;</span></div>
+
+
+<div class="viewcode-block" id="ConnectTimeout"><a class="viewcode-back" href="../../generated/requests.ConnectTimeout.html#requests.ConnectTimeout">[docs]</a><span class="k">class</span> <span class="nc">ConnectTimeout</span><span class="p">(</span><span class="n">ConnectionError</span><span class="p">,</span> <span class="n">Timeout</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;The request timed out while trying to connect to the remote server.</span>
+
+<span class="sd">    Requests that produced this error are safe to retry.</span>
+<span class="sd">    &quot;&quot;&quot;</span></div>
+
+
+<div class="viewcode-block" id="ReadTimeout"><a class="viewcode-back" href="../../generated/requests.ReadTimeout.html#requests.ReadTimeout">[docs]</a><span class="k">class</span> <span class="nc">ReadTimeout</span><span class="p">(</span><span class="n">Timeout</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;The server did not send any data in the allotted amount of time.&quot;&quot;&quot;</span></div>
+
+
+<div class="viewcode-block" id="URLRequired"><a class="viewcode-back" href="../../generated/requests.URLRequired.html#requests.URLRequired">[docs]</a><span class="k">class</span> <span class="nc">URLRequired</span><span class="p">(</span><span class="n">RequestException</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;A valid URL is required to make a request.&quot;&quot;&quot;</span></div>
+
+
+<div class="viewcode-block" id="TooManyRedirects"><a class="viewcode-back" href="../../generated/requests.TooManyRedirects.html#requests.TooManyRedirects">[docs]</a><span class="k">class</span> <span class="nc">TooManyRedirects</span><span class="p">(</span><span class="n">RequestException</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Too many redirects.&quot;&quot;&quot;</span></div>
+
+
+<span class="k">class</span> <span class="nc">MissingSchema</span><span class="p">(</span><span class="n">RequestException</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;The URL schema (e.g. http or https) is missing.&quot;&quot;&quot;</span>
+
+
+<span class="k">class</span> <span class="nc">InvalidSchema</span><span class="p">(</span><span class="n">RequestException</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;See defaults.py for valid schemas.&quot;&quot;&quot;</span>
+
+
+<span class="k">class</span> <span class="nc">InvalidURL</span><span class="p">(</span><span class="n">RequestException</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; The URL provided was somehow invalid. &quot;&quot;&quot;</span>
+
+
+<span class="k">class</span> <span class="nc">ChunkedEncodingError</span><span class="p">(</span><span class="n">RequestException</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;The server declared chunked encoding but sent an invalid chunk.&quot;&quot;&quot;</span>
+
+
+<span class="k">class</span> <span class="nc">ContentDecodingError</span><span class="p">(</span><span class="n">RequestException</span><span class="p">,</span> <span class="n">BaseHTTPError</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Failed to decode response content&quot;&quot;&quot;</span>
+
+
+<span class="k">class</span> <span class="nc">StreamConsumedError</span><span class="p">(</span><span class="n">RequestException</span><span class="p">,</span> <span class="ne">TypeError</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;The content for this response was already consumed&quot;&quot;&quot;</span>
+
+
+<span class="k">class</span> <span class="nc">RetryError</span><span class="p">(</span><span class="n">RequestException</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Custom retries logic failed&quot;&quot;&quot;</span>
+
+
+<span class="c1"># Warnings</span>
+
+
+<span class="k">class</span> <span class="nc">RequestsWarning</span><span class="p">(</span><span class="ne">Warning</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Base warning for Requests.&quot;&quot;&quot;</span>
+    <span class="k">pass</span>
+
+
+<div class="viewcode-block" id="FileModeWarning"><a class="viewcode-back" href="../../generated/requests.FileModeWarning.html#requests.FileModeWarning">[docs]</a><span class="k">class</span> <span class="nc">FileModeWarning</span><span class="p">(</span><span class="n">RequestsWarning</span><span class="p">,</span> <span class="ne">DeprecationWarning</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    A file was opened in text mode, but Requests determined its binary length.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">pass</span></div>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/copybutton.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

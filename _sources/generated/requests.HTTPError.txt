@@ -1,0 +1,6 @@
+requests.HTTPError
+==================
+
+.. currentmodule:: requests
+
+.. autoexception:: HTTPError

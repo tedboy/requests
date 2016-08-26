@@ -1,0 +1,6 @@
+requests.Response.iter_content
+==============================
+
+.. currentmodule:: requests
+
+.. automethod:: Response.iter_content

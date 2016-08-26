@@ -1,0 +1,6 @@
+requests.Session.resolve_redirects
+==================================
+
+.. currentmodule:: requests
+
+.. automethod:: Session.resolve_redirects

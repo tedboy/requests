@@ -1,0 +1,6 @@
+requests.Session.rebuild_proxies
+================================
+
+.. currentmodule:: requests
+
+.. automethod:: Session.rebuild_proxies

@@ -1,0 +1,6 @@
+requests.Session.delete
+=======================
+
+.. currentmodule:: requests
+
+.. automethod:: Session.delete

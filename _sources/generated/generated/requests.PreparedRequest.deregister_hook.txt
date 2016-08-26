@@ -1,0 +1,6 @@
+requests.PreparedRequest.deregister_hook
+========================================
+
+.. currentmodule:: requests
+
+.. automethod:: PreparedRequest.deregister_hook

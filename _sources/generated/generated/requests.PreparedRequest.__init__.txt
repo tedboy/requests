@@ -1,0 +1,6 @@
+requests.PreparedRequest.__init__
+=================================
+
+.. currentmodule:: requests
+
+.. automethod:: PreparedRequest.__init__
